@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Box, Button, Chip, IconButton, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from '@mui/material';
-import { Delete, Edit, NavigateBefore, NavigateNext, OpenInNew, WhatsApp } from '@mui/icons-material';
-import { obtenerMetaCategoria } from '../../utils/categorias.js';
+import { Box, Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from '@mui/material';
+import { Delete, Edit, Language, NavigateBefore, NavigateNext, WhatsApp } from '@mui/icons-material';
 import { obtenerEnlacesTelefono } from '../../utils/telefonos.js';
 import IrAPagina from '../IrAPagina.jsx';
 
@@ -25,7 +24,6 @@ function telefonoResumen(alojamiento) {
 // Las columnas secundarias se ocultan en pantallas chicas para evitar scroll horizontal
 const visibilidad = {
   ocultoHastaMd: { display: { xs: 'none', md: 'table-cell' } },
-  ocultoHastaSm: { display: { xs: 'none', sm: 'table-cell' } },
 };
 
 export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }) {
@@ -46,10 +44,10 @@ export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }
             <TableRow>
               <TableCell sx={[visibilidad.ocultoHastaMd, { fontWeight: 700 }]}>ID</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Nombre</TableCell>
-              <TableCell sx={{ fontWeight: 700 }}>Categoría</TableCell>
               <TableCell sx={[visibilidad.ocultoHastaMd, { fontWeight: 700 }]}>Dirección</TableCell>
-              <TableCell sx={[visibilidad.ocultoHastaSm, { fontWeight: 700 }]}>WhatsApp</TableCell>
-              <TableCell sx={[visibilidad.ocultoHastaSm, { fontWeight: 700 }]}>Web</TableCell>
+              <TableCell sx={{ fontWeight: 700 }} title="Probar contacto">
+                Contacto
+              </TableCell>
               <TableCell align="right" sx={{ fontWeight: 700 }}>
                 Acciones
               </TableCell>
@@ -58,64 +56,69 @@ export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }
           <TableBody>
             {filas.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={7} align="center" sx={{ py: 6, color: 'text.secondary' }}>
+                <TableCell colSpan={5} align="center" sx={{ py: 6, color: 'text.secondary' }}>
                   No hay alojamientos que coincidan con el filtro.
                 </TableCell>
               </TableRow>
             ) : (
               filas.map((a) => {
-                const meta = obtenerMetaCategoria(a.categoria);
+                const wa = enlaceWhatsApp(a);
                 return (
                   <TableRow key={a.id} hover>
                     <TableCell sx={[visibilidad.ocultoHastaMd, { color: 'text.secondary' }]}>{a.id}</TableCell>
                     <TableCell sx={{ fontWeight: 600, verticalAlign: 'top' }}>{a.nombre}</TableCell>
-                    <TableCell sx={{ verticalAlign: 'top' }}>
-                      <Chip
-                        size="small"
-                        label={meta.nombre}
-                        sx={{
-                          backgroundColor: `${meta.color}20`,
-                          color: meta.color,
-                          fontWeight: 700,
-                        }}
-                      />
-                    </TableCell>
                     <TableCell sx={visibilidad.ocultoHastaMd}>{a.direccion || '—'}</TableCell>
-                    <TableCell sx={visibilidad.ocultoHastaSm}>
-                      {enlaceWhatsApp(a) ? (
-                        <Tooltip title={telefonoResumen(a)}>
-                          <Button
-                            size="small"
-                            href={enlaceWhatsApp(a)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            startIcon={<WhatsApp />}
-                            sx={{
-                              backgroundColor: '#25d366',
-                              color: '#fff',
-                              borderRadius: 2,
-                              px: 1.5,
-                              py: 0.5,
-                              minWidth: 0,
-                              fontSize: 12,
-                              textTransform: 'none',
-                              '&:hover': { backgroundColor: '#1ebe57' },
-                            }}
-                          >
-                            Probar
-                          </Button>
-                        </Tooltip>
-                      ) : (
-                        '—'
-                      )}
-                    </TableCell>
-                    <TableCell sx={visibilidad.ocultoHastaSm}>
-                      {a.web ? (
-                        <Tooltip title={a.web}>
-                          <Link href={a.web} target="_blank" rel="noopener noreferrer" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.25 }}>
-                            <OpenInNew fontSize="inherit" />
-                          </Link>
-                        </Tooltip>
+                    <TableCell sx={{ verticalAlign: 'top' }}>
+                      {wa || a.web ? (
+                        <Box sx={{ display: 'flex', gap: 0.75, flexWrap: 'wrap', alignItems: 'center' }}>
+                          {wa && (
+                            <Tooltip title={telefonoResumen(a)}>
+                              <Button
+                                size="small"
+                                href={wa}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                startIcon={<WhatsApp sx={{ fontSize: 15 }} />}
+                                sx={{
+                                  backgroundColor: '#25d366',
+                                  color: '#fff',
+                                  borderRadius: 2,
+                                  px: 1.25,
+                                  py: { xs: 0.75, sm: 0.5 },
+                                  minWidth: 0,
+                                  fontSize: 12,
+                                  textTransform: 'none',
+                                  '&:hover': { backgroundColor: '#1ebe57' },
+                                }}
+                              >
+                                WhatsApp
+                              </Button>
+                            </Tooltip>
+                          )}
+                          {a.web && (
+                            <Tooltip title={a.web}>
+                              <Button
+                                size="small"
+                                href={a.web}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variant="outlined"
+                                color="primary"
+                                startIcon={<Language sx={{ fontSize: 15 }} />}
+                                sx={{
+                                  borderRadius: 2,
+                                  px: 1.25,
+                                  py: { xs: 0.75, sm: 0.5 },
+                                  minWidth: 0,
+                                  fontSize: 12,
+                                  textTransform: 'none',
+                                }}
+                              >
+                                Web
+                              </Button>
+                            </Tooltip>
+                          )}
+                        </Box>
                       ) : (
                         '—'
                       )}
