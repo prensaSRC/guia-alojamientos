@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import './src/config/env.js';
 import express from 'express';
 import cors from 'cors';
 
@@ -11,7 +11,14 @@ import { errorHandler } from './src/middlewares/errorHandler.js';
 const app = express();
 
 // Middlewares globales
-app.use(cors());
+// CORS: por defecto acepta cualquier origen; si FRONTEND_URL está definida
+// (producción) solo acepta peticiones desde ese dominio.
+const FRONTEND_URL = process.env.FRONTEND_URL || '';
+app.use(
+  cors({
+    origin: FRONTEND_URL ? [FRONTEND_URL] : true
+  })
+);
 app.use(express.json());
 
 // Ruta de salud (para verificar que el servidor responde sin tocar la DB)

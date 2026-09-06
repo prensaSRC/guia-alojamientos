@@ -1,0 +1,13 @@
+# Configuración de build para Netlify.
+# La raíz del sitio es frontend/; publish apunta a la salida de `vite build`.
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# SPA: /login y /admin son rutas de cliente. Cualquier ruta no matcheada
+# por un archivo real se resuelve a index.html (React Router).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
