@@ -55,18 +55,21 @@ export default function Header({ onMenuClick }) {
               right: { xs: 4, sm: 8 },
               top: '50%',
               transform: 'translateY(-50%)',
-              // Anillo de atención que pulsa unas ondas al entrar a la web
+              // Anillo de atención que pulsa unas ondas al entrar a la web.
+              // pointerEvents none para no tapar el botón; al terminar queda oculto.
               '&::after': {
                 content: '""',
                 position: 'absolute',
                 inset: 0,
                 borderRadius: '50%',
-                border: '2px solid rgba(0, 173, 183, 0.7)',
+                border: '2px solid transparent',
+                opacity: 0,
+                pointerEvents: 'none',
                 animation: 'menuPulso 1.4s ease-out 3',
               },
               '@keyframes menuPulso': {
-                '0%': { transform: 'scale(1)', opacity: 1 },
-                '100%': { transform: 'scale(1.65)', opacity: 0 },
+                '0%': { transform: 'scale(1)', opacity: 1, borderColor: 'rgba(0, 173, 183, 0.7)' },
+                '100%': { transform: 'scale(1.65)', opacity: 0, borderColor: 'rgba(0, 173, 183, 0)' },
               },
               '@media (prefers-reduced-motion: reduce)': { '&::after': { animation: 'none' } },
             }}
