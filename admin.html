@@ -1,0 +1,1877 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración - Guía de Alojamientos</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================================
+           ESTILOS GLOBALES
+           ============================================ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: #f0f2f5;
+        color: #1a1a2e;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* ============================================
+           HEADER
+           ============================================ */
+      .header {
+        background: linear-gradient(135deg, #00adb7, #008a92);
+        color: white;
+        padding: 24px 32px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .header h1 i {
+        margin-right: 12px;
+      }
+
+      .header .subtitle {
+        opacity: 0.85;
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 4px;
+      }
+
+      .header-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      /* ============================================
+           BOTONES
+           ============================================ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 22px;
+        border: none;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-decoration: none;
+      }
+
+      .btn:active {
+        transform: scale(0.97);
+      }
+
+      .btn-primary {
+        background: white;
+        color: #00adb7;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-success {
+        background: #7cc100;
+        color: white;
+      }
+      .btn-success:hover {
+        background: #66a300;
+        transform: translateY(-2px);
+      }
+
+      .btn-danger {
+        background: #dc3545;
+        color: white;
+      }
+      .btn-danger:hover {
+        background: #c82333;
+        transform: translateY(-2px);
+      }
+
+      .btn-warning {
+        background: #ff9b00;
+        color: white;
+      }
+      .btn-warning:hover {
+        background: #e68a00;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: white;
+      }
+
+      .btn-sm {
+        padding: 6px 14px;
+        font-size: 12px;
+      }
+
+      .btn-xs {
+        padding: 4px 10px;
+        font-size: 11px;
+      }
+
+      /* ============================================
+           ESTADÍSTICAS
+           ============================================ */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 18px 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-card .number {
+        font-size: 28px;
+        font-weight: 800;
+        color: #00adb7;
+      }
+
+      .stat-card .label {
+        font-size: 12px;
+        color: #8a8aaa;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      /* ============================================
+           ALERTAS
+           ============================================ */
+      .alert {
+        padding: 14px 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        display: none;
+      }
+
+      .alert-success {
+        display: block;
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .alert-error {
+        display: block;
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .alert-info {
+        display: block;
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+      }
+
+      /* ============================================
+           FORMULARIO
+           ============================================ */
+      .form-card {
+        background: white;
+        border-radius: 16px;
+        padding: 28px 32px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 28px;
+      }
+
+      .form-card h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #00adb7;
+        margin-bottom: 20px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        font-weight: 600;
+        font-size: 13px;
+        color: #4a4a6a;
+      }
+
+      .form-group label .required {
+        color: #dc3545;
+        margin-left: 3px;
+      }
+
+      .form-group input,
+      .form-group select {
+        padding: 10px 14px;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        font-size: 14px;
+        font-family: inherit;
+        transition: all 0.25s ease;
+        background: #fafbfc;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #00adb7;
+        background: white;
+        box-shadow: 0 0 0 4px rgba(0, 173, 183, 0.08);
+      }
+
+      .form-group input.error,
+      .form-group select.error {
+        border-color: #dc3545;
+        background: #fff8f8;
+      }
+
+      .form-group .hint {
+        font-size: 12px;
+        color: #8a8aaa;
+        margin-top: 2px;
+      }
+
+      .form-error {
+        font-size: 12px;
+        color: #dc3545;
+        font-weight: 600;
+        margin-top: 4px;
+        display: none;
+      }
+
+      .form-group.has-error .form-error {
+        display: block;
+      }
+
+      .form-group.has-error .hint {
+        display: none;
+      }
+
+      /* ============================================
+           TELÉFONOS DINÁMICOS
+           ============================================ */
+      .telefonos-section {
+        grid-column: 1 / -1;
+        margin-top: 4px;
+      }
+
+      .telefonos-section .section-label {
+        font-weight: 600;
+        font-size: 13px;
+        color: #4a4a6a;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .telefonos-section .section-label .badge {
+        background: #00adb7;
+        color: white;
+        font-size: 11px;
+        padding: 2px 10px;
+        border-radius: 50px;
+      }
+
+      .telefono-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin-bottom: 12px;
+        position: relative;
+        transition: all 0.2s ease;
+      }
+
+      .telefono-item:hover {
+        border-color: #00adb7;
+        background: #f5fafb;
+      }
+
+      .telefono-item .telefono-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .telefono-item .telefono-header .numero-label {
+        font-weight: 600;
+        font-size: 13px;
+        color: #4a4a6a;
+      }
+
+      .telefono-item .telefono-header .btn-remove {
+        background: none;
+        border: none;
+        color: #dc3545;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .telefono-item .telefono-header .btn-remove:hover {
+        background: #f8d7da;
+      }
+
+      .telefono-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .telefono-grid .form-group {
+        grid-column: auto;
+      }
+
+      .telefono-grid .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .btn-add-telefono {
+        background: none;
+        border: 2px dashed #00adb7;
+        color: #00adb7;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+        font-family: inherit;
+      }
+
+      .btn-add-telefono:hover {
+        background: rgba(0, 173, 183, 0.06);
+        border-color: #008a92;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+        grid-column: 1 / -1;
+      }
+
+      /* ============================================
+           TABLA
+           ============================================ */
+      .table-container {
+        background: white;
+        border-radius: 16px;
+        padding: 20px 24px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        overflow-x: auto;
+      }
+
+      .table-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .table-header .left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .table-header .left h2 {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .table-header .left .count {
+        background: #f0f2f5;
+        padding: 3px 14px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #4a4a6a;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background: #f8f9fa;
+        border-radius: 50px;
+        padding: 3px 3px 3px 18px;
+        border: 2px solid transparent;
+        transition: all 0.25s ease;
+        min-width: 200px;
+      }
+
+      .search-box:focus-within {
+        border-color: #00adb7;
+        background: white;
+      }
+
+      .search-box input {
+        border: none;
+        padding: 8px 10px;
+        font-size: 13px;
+        background: transparent;
+        width: 100%;
+        outline: none;
+        font-family: inherit;
+        color: #1a1a2e;
+      }
+
+      .search-box i {
+        color: #8a8aaa;
+        font-size: 14px;
+      }
+
+      /* Tabla */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      thead {
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      th {
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 700;
+        color: #4a4a6a;
+        border-bottom: 2px solid #e9ecef;
+        white-space: nowrap;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+
+      td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #f0f2f5;
+        vertical-align: middle;
+        font-size: 13px;
+      }
+
+      tr:hover td {
+        background: #fafbfc;
+      }
+
+      .categoria-badge {
+        display: inline-block;
+        padding: 2px 12px;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+
+      .telefonos-resumen {
+        font-size: 12px;
+        color: #4a4a6a;
+        max-width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .telefonos-resumen .btn {
+        flex-shrink: 0;
+      }
+
+      .web-icon {
+        color: #00adb7;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .web-icon:hover {
+        color: #008a92;
+      }
+
+      .actions-cell {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .table-nav {
+        display: flex;
+        gap: 8px;
+      }
+
+      .table-nav .btn {
+        background: transparent;
+        color: #00adb7;
+        border: 2px solid #00adb7;
+      }
+      .table-nav .btn:hover {
+        background: rgba(0, 173, 183, 0.1);
+      }
+
+      /* Botones flotantes para navegar la lista */
+      .float-nav {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 900;
+      }
+
+      .btn-float {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        background: linear-gradient(135deg, #00adb7, #008a92);
+        color: white;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+      .btn-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ============================================
+           MODAL DE CONFIRMACIÓN
+           ============================================ */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-overlay.active {
+        display: flex;
+      }
+
+      .modal {
+        background: white;
+        border-radius: 16px;
+        padding: 32px;
+        max-width: 480px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      .modal .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .modal .modal-header h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .modal .modal-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #8a8aaa;
+        transition: color 0.2s ease;
+      }
+
+      .modal .modal-close:hover {
+        color: #1a1a2e;
+      }
+
+      .modal p {
+        color: #4a4a6a;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      /* ============================================
+           RESPONSIVE
+           ============================================ */
+      @media (max-width: 992px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .telefono-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .telefono-grid .form-group.full-width {
+          grid-column: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .header-actions {
+          justify-content: center;
+        }
+
+        .table-header {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-box {
+          min-width: unset;
+        }
+
+        /* Tabla responsive: cada fila se vuelve una tarjeta */
+        table,
+        thead,
+        tbody,
+        tr,
+        td {
+          display: block;
+        }
+
+        thead,
+        th {
+          display: none;
+        }
+
+        tr {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid #e9ecef;
+          border-radius: 12px;
+          background: white;
+          margin-bottom: 12px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        td {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding: 8px 12px;
+          border-bottom: 1px solid #f0f2f5;
+        }
+
+        td:last-child {
+          border-bottom: none;
+        }
+
+        td::before {
+          content: attr(data-label);
+          font-weight: 700;
+          color: #4a4a6a;
+          font-size: 12px;
+          flex-shrink: 0;
+          min-width: 80px;
+          text-transform: uppercase;
+          letter-spacing: 0.3px;
+        }
+
+        td .actions-cell {
+          justify-content: flex-end;
+        }
+
+        /* En mobile no recortar contenido: la dirección y el WhatsApp
+           deben verse completos con su botón */
+        td[data-label="Dirección"] {
+          white-space: normal;
+          overflow: visible;
+          word-break: break-word;
+          align-items: flex-start;
+        }
+
+        .telefonos-resumen {
+          max-width: none;
+          white-space: normal;
+          overflow: visible;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        .telefonos-resumen .numero-wa {
+          word-break: break-all;
+        }
+
+        /* Quitar el colspan del mensaje "sin resultados" */
+        td[colspan] {
+          text-align: center;
+          justify-content: center;
+        }
+
+        td[colspan]::before {
+          content: none;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+        }
+
+        .stat-card .number {
+          font-size: 20px;
+        }
+
+        .actions-cell {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .form-card {
+          padding: 20px;
+        }
+
+        .telefono-item {
+          padding: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 12px;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .header h1 {
+          font-size: 18px;
+        }
+
+        .btn {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+
+        th,
+        td {
+          font-size: 12px;
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- ===== HEADER ===== -->
+      <div class="header">
+        <div>
+          <h1><i class="fas fa-hotel"></i> Panel de Administración</h1>
+          <div class="subtitle">
+            Gestioná todos los alojamientos de Santa Rosa de Calamuchita
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-outline" onclick="exportarJSON()">
+            <i class="fas fa-download"></i> Exportar JSON
+          </button>
+          <button
+            class="btn btn-outline"
+            onclick="window.open('index.html', '_blank')"
+          >
+            <i class="fas fa-eye"></i> Ver web
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== ALERTA ===== -->
+      <div id="alert" class="alert"></div>
+
+      <!-- ===== ESTADÍSTICAS ===== -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="number" id="totalCount">0</div>
+          <div class="label">Total Alojamientos</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="categoriaCount">0</div>
+          <div class="label">Categorías</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="conWeb">0</div>
+          <div class="label">Con sitio web</div>
+        </div>
+      </div>
+
+      <!-- ===== FORMULARIO ===== -->
+      <div class="form-card" id="formCard">
+        <h2 id="formTitle">
+          <i class="fas fa-plus-circle"></i> Agregar nuevo alojamiento
+        </h2>
+        <form id="alojamientoForm" onsubmit="return false;">
+          <input type="hidden" id="editId" value="" />
+
+          <div class="form-grid">
+            <!-- Nombre -->
+            <div class="form-group">
+              <label>Nombre <span class="required">*</span></label>
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Ej: Hotel Ejemplo"
+                required
+              />
+              <div class="form-error"></div>
+            </div>
+
+            <!-- Categoría -->
+            <div class="form-group">
+              <label>Categoría <span class="required">*</span></label>
+              <select id="categoria" required>
+                <option value="">Seleccionar...</option>
+                <option value="hotel">Hotel</option>
+                <option value="aparthotel">Aparthotel</option>
+                <option value="posada">Posada</option>
+                <option value="residencial">Residencial</option>
+                <option value="hostería">Hostería</option>
+                <option value="hospedaje">Hospedaje</option>
+                <option value="hostel">Hostel</option>
+                <option value="departamento">Departamento</option>
+                <option value="cabaña">Cabaña</option>
+                <option value="apart cabaña">Apart Cabaña</option>
+                <option value="complejo de cabañas">Complejo de Cabañas</option>
+                <option value="colonia">Colonia</option>
+                <option value="camping">Camping</option>
+                <option value="casa de alquiler">Casa de Alquiler</option>
+                <option value="agencias de viajes">Agencia de Viajes</option>
+              </select>
+              <div class="form-error"></div>
+            </div>
+
+            <!-- Dirección -->
+            <div class="form-group full-width">
+              <label>Dirección <span class="required">*</span></label>
+              <input
+                type="text"
+                id="direccion"
+                placeholder="Ej: Av. Giagetto 974"
+                required
+              />
+              <div class="form-error"></div>
+            </div>
+
+            <!-- Sitio web -->
+            <div class="form-group full-width">
+              <label>Sitio web</label>
+              <input type="url" id="web" placeholder="https://ejemplo.com" />
+              <span class="hint">Dejalo vacío si no tiene sitio web</span>
+            </div>
+
+            <!-- ===== TELÉFONOS (sección dinámica) ===== -->
+            <div class="telefonos-section">
+              <div class="section-label">
+                <i class="fas fa-phone"></i> Teléfonos
+                <span class="badge" id="telefonoCount">0</span>
+              </div>
+              <div id="telefonosContainer">
+                <!-- Los teléfonos se generan con JavaScript -->
+              </div>
+              <button
+                type="button"
+                class="btn-add-telefono"
+                onclick="agregarTelefono()"
+              >
+                <i class="fas fa-plus"></i> Agregar otro teléfono
+              </button>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="guardarAlojamiento()"
+              >
+                <i class="fas fa-save"></i> Guardar
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning"
+                onclick="limpiarFormulario()"
+                id="btnCancelar"
+                style="display: none"
+              >
+                <i class="fas fa-times"></i> Cancelar edición
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ===== TABLA ===== -->
+      <div class="table-container">
+        <div class="table-header">
+          <div class="left">
+            <h2><i class="fas fa-list"></i> Lista de alojamientos</h2>
+            <span class="count" id="rowCount">0 registros</span>
+          </div>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Buscar..."
+              oninput="renderTabla()"
+            />
+          </div>
+        </div>
+        <div style="overflow-x: auto">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 45px">ID</th>
+                <th>Nombre</th>
+                <th style="width: 120px">Categoría</th>
+                <th>Dirección</th>
+                <th style="width: 200px">WhatsApp</th>
+                <th style="width: 40px; text-align: center">Web</th>
+                <th style="width: 100px; text-align: center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Renderizado por JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== BOTONES FLOTANTES (ir al inicio/final) ===== -->
+      <div class="float-nav" id="floatNav">
+        <button
+          class="btn btn-float"
+          onclick="irInicio()"
+          title="Ir al inicio de la lista"
+        >
+          <i class="fas fa-chevron-up"></i>
+        </button>
+        <button
+          class="btn btn-float"
+          onclick="irFinal()"
+          title="Ir al final de la lista"
+        >
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== MODAL DE CONFIRMACIÓN ===== -->
+    <div class="modal-overlay" id="confirmModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>
+            <i class="fas fa-exclamation-triangle" style="color: #dc3545"></i>
+            Confirmar eliminación
+          </h3>
+          <button class="modal-close" onclick="cerrarModal()">&times;</button>
+        </div>
+        <p id="confirmMessage">
+          ¿Estás seguro de eliminar este alojamiento? Esta acción no se puede
+          deshacer.
+        </p>
+        <div class="modal-actions">
+          <button
+            class="btn"
+            style="background: #6c757d; color: white"
+            onclick="cerrarModal()"
+          >
+            Cancelar
+          </button>
+          <button class="btn btn-danger" onclick="eliminarConfirmado()">
+            <i class="fas fa-trash"></i> Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script>
+      // ============================================
+      // VARIABLES GLOBALES
+      // ============================================
+      let alojamientos = [];
+      let idAEliminar = null;
+      let telefonoCounter = 0;
+      let editandoId = null;
+
+      // Colores por categoría (para badges)
+      const coloresCategoria = {
+        hotel: "#00adb7",
+        aparthotel: "#00adb7",
+        posada: "#ff7300",
+        residencial: "#ff7300",
+        hostería: "#ff7300",
+        hospedaje: "#ff7300",
+        hostel: "#ff7300",
+        departamento: "#ff9b00",
+        cabaña: "#7cc100",
+        "apart cabaña": "#7cc100",
+        "complejo de cabañas": "#7cc100",
+        colonia: "#b4d006",
+        camping: "#b4d006",
+        "casa de alquiler": "#4a6fa5",
+        "agencias de viajes": "#4a6fa5",
+      };
+
+      // Nombres amigables para las categorías
+      const nombresCategoria = {
+        hotel: "Hotel",
+        aparthotel: "Aparthotel",
+        posada: "Posada",
+        residencial: "Residencial",
+        hostería: "Hostería",
+        hospedaje: "Hospedaje",
+        hostel: "Hostel",
+        departamento: "Departamento",
+        cabaña: "Cabaña",
+        "apart cabaña": "Apart Cabaña",
+        "complejo de cabañas": "Complejo de Cabañas",
+        colonia: "Colonia",
+        camping: "Camping",
+        "casa de alquiler": "Casa de Alquiler",
+        "agencias de viajes": "Agencia de Viajes",
+      };
+
+      // ============================================
+      // CARGAR DATOS
+      // ============================================
+      async function cargarDatos() {
+        try {
+          const response = await fetch("data.json");
+          if (!response.ok) throw new Error("Error al cargar los datos");
+          alojamientos = await response.json();
+          actualizarEstadisticas();
+          renderTabla();
+        } catch (error) {
+          console.error("Error:", error);
+          mostrarAlerta(
+            "❌ Error al cargar los datos. Verificá que el archivo data.json exista.",
+            "error",
+          );
+        }
+      }
+
+      // ============================================
+      // ESTADÍSTICAS
+      // ============================================
+      function actualizarEstadisticas() {
+        document.getElementById("totalCount").textContent = alojamientos.length;
+
+        const categorias = new Set(alojamientos.map((item) => item.categoria));
+        document.getElementById("categoriaCount").textContent = categorias.size;
+
+        const conWeb = alojamientos.filter(
+          (item) => item.web && item.web.trim() !== "",
+        ).length;
+        document.getElementById("conWeb").textContent = conWeb;
+
+        document.getElementById("rowCount").textContent =
+          `${alojamientos.length} registros`;
+      }
+
+      // ============================================
+      // RENDERIZAR TABLA
+      // ============================================
+      function renderTabla() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase()
+          .trim();
+        const tbody = document.getElementById("tableBody");
+
+        let filtrados = alojamientos;
+        if (searchTerm) {
+          filtrados = alojamientos.filter((item) => {
+            const texto =
+              `${item.nombre} ${item.direccion} ${item.telefono || ""} ${item.web || ""}`.toLowerCase();
+            return texto.includes(searchTerm);
+          });
+        }
+
+        if (filtrados.length === 0) {
+          tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: #8a8aaa;">
+                            <i class="fas fa-search" style="font-size: 28px; display: block; margin-bottom: 10px;"></i>
+                            No se encontraron alojamientos
+                        </td>
+                    </tr>
+                `;
+          return;
+        }
+
+        let html = "";
+        filtrados.forEach((item) => {
+          const color = coloresCategoria[item.categoria] || "#6c757d";
+          const categoriaLabel =
+            nombresCategoria[item.categoria] ||
+            item.categoria ||
+            "Sin categoría";
+
+          // WhatsApp: tomar el primero del array 'telefonos' con tipo celular y whatsapp
+          const entryWhatsapp =
+            item.telefonos &&
+            item.telefonos.find((t) => t.tipo === "celular" && t.whatsapp);
+          let whatsappResumen = "—";
+          if (entryWhatsapp && entryWhatsapp.whatsapp) {
+            whatsappResumen = entryWhatsapp.whatsapp;
+          }
+
+          const webDisplay = item.web
+            ? `<a href="${item.web}" target="_blank" class="web-icon" title="Ir al sitio web"><i class="fas fa-external-link-alt"></i></a>`
+            : '<span style="color: #ddd;">—</span>';
+
+          html += `
+                    <tr>
+                        <td data-label="ID" style="font-weight: 600; color: #4a4a6a;">${item.id}</td>
+                        <td data-label="Nombre"><strong>${item.nombre}</strong></td>
+                        <td data-label="Categoría">
+                            <span class="categoria-badge" style="background: ${color}20; color: ${color};">
+                                ${categoriaLabel}
+                            </span>
+                        </td>
+                        <td data-label="Dirección" style="font-size: 12px; max-width: 200px; word-break: break-word;">${item.direccion}</td>
+                        <td data-label="WhatsApp" class="telefonos-resumen">
+                            <span class="numero-wa">${whatsappResumen}</span>
+                            ${
+                              entryWhatsapp && entryWhatsapp.whatsapp
+                                ? `<button class="btn btn-success btn-xs" onclick="probarWhatsapp(${item.id})" title="Probar WhatsApp"><i class="fab fa-whatsapp"></i></button>`
+                                : ""
+                            }
+                        </td>
+                        <td data-label="Web" style="text-align: center;">${webDisplay}</td>
+                        <td data-label="Acciones">
+                            <div class="actions-cell">
+                                <button class="btn btn-primary btn-xs" onclick="editarAlojamiento(${item.id})" title="Editar">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger btn-xs" onclick="confirmarEliminar(${item.id})" title="Eliminar">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+        });
+
+        tbody.innerHTML = html;
+      }
+
+      // ============================================
+      // NAVEGACIÓN DE LA LISTA
+      // ============================================
+      function irInicio() {
+        const cabecera = document.querySelector(".table-header");
+        if (cabecera && cabecera.getBoundingClientRect().top < 0) {
+          // Ya estamos por debajo de la tabla → ir al inicio de la página
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          cabecera?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function irFinal() {
+        const tbody = document.getElementById("tableBody");
+        const ultimaFila = tbody ? tbody.querySelector("tr:last-child") : null;
+        if (ultimaFila) {
+          ultimaFila.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          const contenedor = document.querySelector(".table-container");
+          contenedor?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      // ============================================
+      // FUNCIONES DE TELÉFONOS (dinámicos)
+      // ============================================
+      function agregarTelefono(
+        visible = "",
+        tipo = "celular_con_whatsapp",
+        e164 = "",
+        whatsapp = "",
+      ) {
+        telefonoCounter++;
+        const container = document.getElementById("telefonosContainer");
+        const id = telefonoCounter;
+
+        // Determinar qué campos mostrar según el tipo
+        const mostrarWhatsapp = tipo === "celular_con_whatsapp";
+
+        const div = document.createElement("div");
+        div.className = "telefono-item";
+        div.id = `telefono-${id}`;
+        div.dataset.id = id;
+        div.innerHTML = `
+                <div class="telefono-header">
+                    <span class="numero-label"><i class="fas fa-phone"></i> Teléfono ${container.children.length + 1}</span>
+                    <button type="button" class="btn-remove" onclick="eliminarTelefono(${id})" title="Eliminar este teléfono">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="telefono-grid">
+                    <div class="form-group full-width">
+                        <label>Número de Teléfono<span class="required">*</span></label>
+                        <input type="text" class="telefono-visible" placeholder="Ej: (03546) 15452067" value="${visible}">
+                        <span class="hint">Se muestra en la tarjeta. Puede tener cualquier formato.</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo <span class="required">*</span></label>
+                        <select class="telefono-tipo" onchange="cambiarTipoTelefono(this)">
+                            <option value="fijo" ${tipo === "fijo" ? "selected" : ""}>Fijo</option>
+                            <option value="celular_con_whatsapp" ${tipo === "celular_con_whatsapp" ? "selected" : ""}>Celular con WhatsApp</option>
+                            <option value="celular_sin_whatsapp" ${tipo === "celular_sin_whatsapp" ? "selected" : ""}>Celular sin WhatsApp</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>E.164 (para llamar) <span class="required">*</span></label>
+                        <input type="text" class="telefono-e164" placeholder="Ej: +5493546452067" value="${e164}">
+                        <span class="hint">Ej: +54 + área + número</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group whatsapp-field" style="${mostrarWhatsapp ? "" : "display: none;"}">
+                        <label>WhatsApp <span class="required">*</span></label>
+                        <input type="text" class="telefono-whatsapp" placeholder="Ej: 5493546452067" value="${whatsapp}" maxlength="13">
+                        <span class="hint">Sin +. 13 dígitos: país + área + número.</span>
+                        <div class="form-error"></div>
+                    </div>
+                </div>
+            `;
+
+        container.appendChild(div);
+        actualizarContadorTelefonos();
+      }
+
+      function eliminarTelefono(id) {
+        const elemento = document.getElementById(`telefono-${id}`);
+        if (elemento) {
+          const container = document.getElementById("telefonosContainer");
+          if (container.children.length <= 1) {
+            mostrarAlerta("⚠️ Debe haber al menos un teléfono.", "error");
+            return;
+          }
+          elemento.remove();
+          actualizarContadorTelefonos();
+          // Renumerar labels
+          const items = container.querySelectorAll(".telefono-item");
+          items.forEach((item, index) => {
+            const label = item.querySelector(".numero-label");
+            if (label) {
+              label.textContent = `Teléfono ${index + 1}`;
+            }
+          });
+        }
+      }
+
+      function cambiarTipoTelefono(select) {
+        const item = select.closest(".telefono-item");
+        const whatsappField = item.querySelector(".whatsapp-field");
+        const tipo = select.value;
+
+        if (tipo === "celular_con_whatsapp") {
+          whatsappField.style.display = "block";
+        } else {
+          whatsappField.style.display = "none";
+        }
+      }
+
+      function actualizarContadorTelefonos() {
+        const container = document.getElementById("telefonosContainer");
+        const count = container.children.length;
+        document.getElementById("telefonoCount").textContent = count;
+      }
+
+      function cargarTelefonos(telefonos) {
+        const container = document.getElementById("telefonosContainer");
+        container.innerHTML = "";
+        telefonoCounter = 0;
+
+        if (!telefonos || telefonos.length === 0) {
+          // Si no hay teléfonos, agregar uno vacío
+          agregarTelefono();
+          return;
+        }
+
+        // Separar el string visible (telefono) y el array de objetos (telefonos)
+        // El campo 'telefono' es el string visible concatenado
+        // 'telefonos' es el array de objetos con tipo, e164, whatsapp
+
+        // Para editar, recibimos el array 'telefonos' y el string 'telefono' visible
+        // Pero el usuario puede modificar los números visibles individualmente
+        // Al guardar, se genera el 'telefono' concatenando todos los visibles
+
+        telefonos.forEach((t, index) => {
+          const visible = t.visible || "";
+          const tipo = t.tipo || "celular_con_whatsapp";
+          const e164 = t.e164 || "";
+          const whatsapp = t.whatsapp || "";
+          agregarTelefono(visible, tipo, e164, whatsapp);
+        });
+      }
+
+      // ============================================
+      // RECOLECTAR DATOS DEL FORMULARIO
+      // ============================================
+      function recolectarTelefonos() {
+        const items = document.querySelectorAll(".telefono-item");
+        const telefonos = [];
+        const visibles = [];
+
+        let hasError = false;
+
+        items.forEach((item) => {
+          const visible = item.querySelector(".telefono-visible").value.trim();
+          const tipo = item.querySelector(".telefono-tipo").value;
+          const e164 = item.querySelector(".telefono-e164").value.trim();
+          const whatsappField = item.querySelector(".telefono-whatsapp");
+          const whatsapp = whatsappField ? whatsappField.value.trim() : "";
+
+          // Validaciones (marcan el error junto al campo)
+          if (!visible) {
+            marcarError(
+              item.querySelector(".telefono-visible"),
+              "El número visible es obligatorio.",
+            );
+            hasError = true;
+            return;
+          }
+
+          if (/[a-zA-Z]/.test(visible)) {
+            marcarError(
+              item.querySelector(".telefono-visible"),
+              "No puede contener letras. Usá solo números y símbolos ( ) - /",
+            );
+            hasError = true;
+            return;
+          }
+
+          if (!e164) {
+            marcarError(
+              item.querySelector(".telefono-e164"),
+              "El E.164 es obligatorio.",
+            );
+            hasError = true;
+            return;
+          }
+
+          if (!e164.startsWith("+")) {
+            marcarError(
+              item.querySelector(".telefono-e164"),
+              'El E.164 debe comenzar con "+".',
+            );
+            hasError = true;
+            return;
+          }
+
+          if (/[a-zA-Z]/.test(e164)) {
+            marcarError(
+              item.querySelector(".telefono-e164"),
+              "No puede contener letras. Usá +, números y espacios.",
+            );
+            hasError = true;
+            return;
+          }
+
+          if (tipo === "celular_con_whatsapp" && !whatsapp) {
+            marcarError(
+              item.querySelector(".telefono-whatsapp"),
+              'Para "Celular con WhatsApp" este campo es obligatorio.',
+            );
+            hasError = true;
+            return;
+          }
+
+          if (tipo === "celular_con_whatsapp" && !/^\d+$/.test(whatsapp)) {
+            marcarError(
+              item.querySelector(".telefono-whatsapp"),
+              "Solo dígitos, sin + ni guiones.",
+            );
+            hasError = true;
+            return;
+          }
+
+          if (tipo === "celular_con_whatsapp" && whatsapp.length !== 13) {
+            marcarError(
+              item.querySelector(".telefono-whatsapp"),
+              "Debe tener exactamente 13 dígitos (país + área + número).",
+            );
+            hasError = true;
+            return;
+          }
+
+          visibles.push(visible);
+
+          const obj = {
+            tipo: tipo === "fijo" ? "fijo" : "celular",
+            e164: e164,
+          };
+
+          if (tipo === "celular_con_whatsapp") {
+            obj.whatsapp = whatsapp;
+          }
+
+          telefonos.push(obj);
+        });
+
+        if (hasError) return null;
+
+        // Generar el string visible concatenado
+        const telefonoVisible = visibles.join(" / ");
+
+        return {
+          telefono: telefonoVisible,
+          telefonos: telefonos,
+        };
+      }
+
+      // ============================================
+      // GUARDAR (AGREGAR/EDITAR)
+      // ============================================
+      function guardarAlojamiento() {
+        limpiarErroresFormulario();
+        const id = document.getElementById("editId").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const categoria = document.getElementById("categoria").value;
+        const direccion = document.getElementById("direccion").value.trim();
+        const web = document.getElementById("web").value.trim();
+
+        // Validar campos obligatorios (marcan el error junto al campo)
+        if (!nombre) {
+          marcarError(
+            document.getElementById("nombre"),
+            "El nombre es obligatorio.",
+          );
+          document.getElementById("nombre").focus();
+          return;
+        }
+
+        if (!categoria) {
+          marcarError(
+            document.getElementById("categoria"),
+            "La categoría es obligatoria.",
+          );
+          document.getElementById("categoria").focus();
+          return;
+        }
+
+        if (!direccion) {
+          marcarError(
+            document.getElementById("direccion"),
+            "La dirección es obligatoria.",
+          );
+          document.getElementById("direccion").focus();
+          return;
+        }
+
+        // Recolectar teléfonos
+        const telefonosData = recolectarTelefonos();
+        if (!telefonosData) return; // Ya muestra el error dentro de la función
+
+        // Verificar duplicados (solo para nuevos)
+        if (!id) {
+          const duplicado = alojamientos.some(
+            (item) =>
+              item.nombre.toLowerCase() === nombre.toLowerCase() &&
+              item.direccion.toLowerCase() === direccion.toLowerCase(),
+          );
+          if (duplicado) {
+            marcarError(
+              document.getElementById("nombre"),
+              "Ya existe un alojamiento con ese nombre y dirección.",
+            );
+            document.getElementById("nombre").focus();
+            return;
+          }
+        }
+
+        // Construir objeto
+        const nuevoAlojamiento = {
+          id: id
+            ? parseInt(id)
+            : Math.max(0, ...alojamientos.map((a) => a.id || 0)) + 1,
+          nombre: nombre,
+          categoria: categoria,
+          direccion: direccion,
+          telefono: telefonosData.telefono,
+          telefonos: telefonosData.telefonos,
+          web: web || "",
+        };
+
+        if (id) {
+          // Editar
+          const index = alojamientos.findIndex((a) => a.id === parseInt(id));
+          if (index !== -1) {
+            alojamientos[index] = nuevoAlojamiento;
+            mostrarAlerta(
+              "✅ Alojamiento actualizado correctamente.",
+              "success",
+            );
+          }
+        } else {
+          // Agregar
+          alojamientos.push(nuevoAlojamiento);
+          mostrarAlerta("✅ Alojamiento agregado correctamente.", "success");
+        }
+
+        limpiarFormulario();
+        actualizarEstadisticas();
+        renderTabla();
+      }
+
+      // ============================================
+      // EDITAR
+      // ============================================
+      function editarAlojamiento(id) {
+        const item = alojamientos.find((a) => a.id === id);
+        if (!item) return;
+
+        editandoId = id;
+        document.getElementById("editId").value = id;
+        document.getElementById("nombre").value = item.nombre;
+        document.getElementById("categoria").value = item.categoria;
+        document.getElementById("direccion").value = item.direccion;
+        document.getElementById("web").value = item.web || "";
+
+        // Cargar teléfonos
+        // Necesitamos reconstruir los datos de los teléfonos para el formulario
+        // El campo 'telefono' es el string visible concatenado
+        // Pero para editar, mostramos cada número visible por separado
+        // Si no hay 'telefonos' o está vacío, usamos el string 'telefono' como único número
+        let telefonosParaEditar = [];
+
+        if (item.telefonos && item.telefonos.length > 0) {
+          // Si tenemos array de telefonos, pero necesitamos los números visibles
+          // Como el JSON no guarda los números visibles individuales, usamos el string telefono
+          // y lo dividimos por ' / ' para obtener los números visibles
+          const visibles = item.telefono ? item.telefono.split(" / ") : [];
+
+          item.telefonos.forEach((t, index) => {
+            telefonosParaEditar.push({
+              visible: visibles[index] || "",
+              tipo: t.tipo === "fijo" ? "fijo" : "celular_con_whatsapp",
+              e164: t.e164 || "",
+              whatsapp: t.whatsapp || "",
+            });
+          });
+        } else {
+          // Fallback: si no hay telefonos, usar el string telefono como único número visible
+          // y asumir que es celular con WhatsApp si tiene '15'
+          const visible = item.telefono || "";
+          const esCelular = visible.includes("15");
+          telefonosParaEditar.push({
+            visible: visible,
+            tipo: esCelular ? "celular_con_whatsapp" : "fijo",
+            e164: "",
+            whatsapp: "",
+          });
+        }
+
+        // Limpiar y cargar teléfonos
+        const container = document.getElementById("telefonosContainer");
+        container.innerHTML = "";
+        telefonoCounter = 0;
+
+        if (telefonosParaEditar.length === 0) {
+          agregarTelefono();
+        } else {
+          telefonosParaEditar.forEach((t) => {
+            agregarTelefono(t.visible, t.tipo, t.e164, t.whatsapp);
+          });
+        }
+        actualizarContadorTelefonos();
+
+        // Cambiar título y mostrar botón de cancelar
+        document.getElementById("formTitle").innerHTML =
+          '<i class="fas fa-edit"></i> Editar alojamiento';
+        document.getElementById("btnCancelar").style.display = "inline-flex";
+
+        // Scroll al formulario
+        document
+          .getElementById("formCard")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+
+        mostrarAlerta(`✏️ Editando: ${item.nombre}`, "info");
+      }
+
+      // ============================================
+      // PROBAR WHATSAPP
+      // ============================================
+      function probarWhatsapp(id) {
+        const item = alojamientos.find((a) => a.id === id);
+        if (!item) return;
+
+        const entryWhatsapp =
+          item.telefonos &&
+          item.telefonos.find((t) => t.tipo === "celular" && t.whatsapp);
+
+        if (!entryWhatsapp || !entryWhatsapp.whatsapp) {
+          mostrarAlerta(
+            `⚠️ "${item.nombre}" no tiene un número de WhatsApp cargado.`,
+            "error",
+          );
+          return;
+        }
+
+        const mensaje = encodeURIComponent(
+          `Hola, es una prueba del número de WhatsApp de "${item.nombre}" de la Guía de Alojamientos.`,
+        );
+        window.open(
+          `https://wa.me/${entryWhatsapp.whatsapp}?text=${mensaje}`,
+          "_blank",
+        );
+
+        mostrarAlerta(
+          `📲 Abriendo WhatsApp con ${entryWhatsapp.whatsapp}. Si dice "no está en WhatsApp", el número está desactualizado.`,
+          "info",
+        );
+      }
+
+      // ============================================
+      // ELIMINAR
+      // ============================================
+      function confirmarEliminar(id) {
+        const item = alojamientos.find((a) => a.id === id);
+        if (!item) return;
+
+        idAEliminar = id;
+        document.getElementById("confirmMessage").textContent =
+          `¿Estás seguro de eliminar "${item.nombre}"? Esta acción no se puede deshacer.`;
+        document.getElementById("confirmModal").classList.add("active");
+      }
+
+      function eliminarConfirmado() {
+        if (idAEliminar === null) return;
+
+        alojamientos = alojamientos.filter((a) => a.id !== idAEliminar);
+        idAEliminar = null;
+        cerrarModal();
+
+        actualizarEstadisticas();
+        renderTabla();
+        mostrarAlerta("🗑️ Alojamiento eliminado correctamente.", "success");
+      }
+
+      function cerrarModal() {
+        document.getElementById("confirmModal").classList.remove("active");
+        idAEliminar = null;
+      }
+
+      // ============================================
+      // LIMPIAR FORMULARIO
+      // ============================================
+      function limpiarFormulario() {
+        limpiarErroresFormulario();
+        document.getElementById("editId").value = "";
+        document.getElementById("nombre").value = "";
+        document.getElementById("categoria").value = "";
+        document.getElementById("direccion").value = "";
+        document.getElementById("web").value = "";
+
+        // Limpiar teléfonos
+        const container = document.getElementById("telefonosContainer");
+        container.innerHTML = "";
+        telefonoCounter = 0;
+        agregarTelefono(); // Agregar un teléfono por defecto
+        actualizarContadorTelefonos();
+
+        document.getElementById("formTitle").innerHTML =
+          '<i class="fas fa-plus-circle"></i> Agregar nuevo alojamiento';
+        document.getElementById("btnCancelar").style.display = "none";
+
+        // Ocultar alerta
+        document.getElementById("alert").className = "alert";
+        document.getElementById("alert").style.display = "none";
+
+        editandoId = null;
+      }
+
+      // ============================================
+      // EXPORTAR JSON
+      // ============================================
+      function exportarJSON() {
+        // Ordenar por ID
+        const sorted = [...alojamientos].sort(
+          (a, b) => (a.id || 0) - (b.id || 0),
+        );
+        const jsonString = JSON.stringify(sorted, null, 4);
+
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `data_${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        mostrarAlerta(
+          `📥 JSON exportado correctamente (${sorted.length} alojamientos)`,
+          "success",
+        );
+      }
+
+      // ============================================
+      // ERRORES DE CAMPO
+      // ============================================
+      // Marca un campo del formulario con error: borde rojo + mensaje bajo el input.
+      function marcarError(inputEl, mensaje) {
+        const formGroup =
+          inputEl.closest(".form-group") || inputEl.parentElement;
+        inputEl.classList.add("error");
+        if (formGroup) {
+          const errorDiv = formGroup.querySelector(".form-error");
+          if (errorDiv) errorDiv.textContent = mensaje;
+          formGroup.classList.add("has-error");
+        }
+      }
+
+      // Limpia los errores de todos los campos del formulario (y del bloque de teléfonos).
+      function limpiarErroresFormulario() {
+        document
+          .querySelectorAll(".form-group.has-error")
+          .forEach((g) => g.classList.remove("has-error"));
+        document
+          .querySelectorAll(".form-group input.error, .form-group select.error")
+          .forEach((el) => el.classList.remove("error"));
+      }
+
+      // ============================================
+      // ALERTAS
+      // ============================================
+      function mostrarAlerta(mensaje, tipo) {
+        const alert = document.getElementById("alert");
+        alert.textContent = mensaje;
+        alert.className = `alert alert-${tipo}`;
+        alert.style.display = "block";
+
+        // Auto-ocultar después de 5 segundos
+        clearTimeout(window.alertTimeout);
+        window.alertTimeout = setTimeout(() => {
+          alert.style.display = "none";
+        }, 5000);
+      }
+
+      // ============================================
+      // INICIALIZAR
+      // ============================================
+      document.addEventListener("DOMContentLoaded", () => {
+        cargarDatos();
+        // Agregar un teléfono por defecto en el formulario
+        agregarTelefono();
+        actualizarContadorTelefonos();
+      });
+
+      // Cerrar modal con ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") cerrarModal();
+      });
+    </script>
+  </body>
+</html>

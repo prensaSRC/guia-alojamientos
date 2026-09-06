@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Alojamientos - Santa Rosa de Calamuchita</title>
+
+    <!-- Font Awesome (íconos profesionales) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo-wrapper">
+          <img
+            src="assets/images/logo-gris.svg"
+            alt="Municipalidad de Santa Rosa de Calamuchita"
+            class="logo"
+          />
+          <div class="logo-text">
+            <h1>Guía de Alojamientos</h1>
+          </div>
+        </div>
+        <div class="search-box header-search">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscá por nombre, dirección o teléfono..."
+            aria-label="Buscar alojamiento"
+          />
+          <button
+            type="button"
+            class="search-clear"
+            id="searchClear"
+            aria-label="Limpiar búsqueda"
+          >&times;</button>
+        </div>
+        <button
+          class="mobile-menu-btn"
+          id="mobileMenuBtn"
+          aria-label="Abrir menú"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-layout">
+      <!-- ===== SIDEBAR (desktop): pestañas ===== -->
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Categorías</h2>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="nav-link active" data-categoria="todos"
+                >Todos</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="hotel">Hoteles</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="aparthotel"
+                >Aparthoteles</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="posada">Posadas</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="departamento"
+                >Departamentos</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="cabaña">Cabañas</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="camping"
+                >Campings</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="casa de alquiler"
+                >Casas de Alquiler</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="apart cabaña"
+                >Apart Cabañas</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="otros">Otros</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-categoria="agencias de viajes"
+                >Agencias</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== ÁREA PRINCIPAL ===== -->
+      <main class="main-area">
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+          <div class="container hero-container">
+            <div class="hero-content">
+              <h2>Encontrá tu hospedaje ideal</h2>
+              <p>
+                Descubrí la mejor oferta de alojamientos en Santa Rosa de
+                Calamuchita
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== RESULTADOS ===== -->
+        <section class="results" id="resultsSection">
+          <div class="container">
+            <div class="results-header">
+              <div class="results-info">
+                <span id="resultsCount">Cargando...</span>
+                <span id="categoryLabel">Todos los alojamientos</span>
+              </div>
+              <div class="results-actions">
+                <button
+                  class="btn btn-secondary"
+                  id="scrollTopBtn"
+                  title="Volver arriba"
+                >
+                  <i class="fas fa-arrow-up"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Grid de tarjetas -->
+            <div class="cards-grid" id="cardsGrid">
+              <!-- Las tarjetas se generan con JavaScript -->
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination" id="pagination">
+              <!-- Generada con JavaScript -->
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <img
+            src="assets/images/logo-blanco.svg"
+            alt="Santa Rosa de Calamuchita"
+            class="footer-logo"
+          />
+          <p>Guía de Alojamientos · Santa Rosa de Calamuchita</p>
+          <p class="footer-attribution">
+            Creado por Área de Prensa y Comunicación de la Municipalidad de
+            Santa Rosa de Calamuchita
+          </p>
+        </div>
+        <div class="footer-info">
+          <p><i class="fas fa-phone"></i> +549 3546 52 8914</p>
+          <p>
+            <i class="fas fa-envelope"></i> turismo@santarosacalamuchita.gob.ar
+          </p>
+          <p>
+            <i class="fas fa-map-pin"></i> Santa Rosa de Calamuchita, Córdoba
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © 2026 Municipalidad de Santa Rosa de Calamuchita. Todos los
+            derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="script.js"></script>
+  </body>
+</html>
