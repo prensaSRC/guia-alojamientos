@@ -3,7 +3,8 @@ import { AppBar, Box, IconButton, Toolbar, Typography, useMediaQuery, useTheme }
 
 // Barra superior con logo y título. En móvil se apilan centrados
 // (el buscador vive dentro del Hero); el menú queda a la derecha.
-export default function Header({ onMenuClick }) {
+// conMenu: en páginas sin lista (p. ej. la portada) se oculta la hamburguesa.
+export default function Header({ onMenuClick, conMenu = true }) {
   const theme = useTheme();
   const esMovil = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -48,7 +49,7 @@ export default function Header({ onMenuClick }) {
         >
           Guía de Alojamientos
         </Typography>
-        {esMovil && (
+        {esMovil && conMenu && (
           <Box
             sx={{
               position: 'absolute',

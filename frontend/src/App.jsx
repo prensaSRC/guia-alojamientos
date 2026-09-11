@@ -1,11 +1,13 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Box, CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme.js';
 import { AlojamientosProvider } from './context/AlojamientosContext.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Home from './pages/Home.jsx';
+import Categoria from './pages/Categoria.jsx';
+import Resultados from './pages/Resultados.jsx';
 import Footer from './components/Footer.jsx';
 
 const Login = lazy(() => import('./pages/Login.jsx'));
@@ -30,8 +32,26 @@ export default function App() {
               <Route
                 path="/"
                 element={
-                  <AlojamientosProvider>
+                  <>
                     <Home />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/categoria/:slug"
+                element={
+                  <AlojamientosProvider>
+                    <Categoria />
+                    <Footer />
+                  </AlojamientosProvider>
+                }
+              />
+              <Route
+                path="/resultados"
+                element={
+                  <AlojamientosProvider>
+                    <Resultados />
                     <Footer />
                   </AlojamientosProvider>
                 }
@@ -45,6 +65,7 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

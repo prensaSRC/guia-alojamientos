@@ -1,19 +1,27 @@
 import { normalizar } from './normalizar.js';
-import { OTROS_GRUPO } from './categorias.js';
+import { ORDEN_CATEGORIAS } from './categorias.js';
+
+const INDICE_CATEGORIA = new Map(ORDEN_CATEGORIAS.map((clave, indice) => [normalizar(clave), indice]));
+
+// Orden público: por categoría (orden del menú) y dentro alfabéticamente.
+// Las categorías desconocidas se envían al final.
+export function ordenarAlojamientos(alojamientos) {
+  return [...(alojamientos || [])].sort((a, b) => {
+    const indiceA = INDICE_CATEGORIA.get(normalizar(a.categoria)) ?? 999;
+    const indiceB = INDICE_CATEGORIA.get(normalizar(b.categoria)) ?? 999;
+    if (indiceA !== indiceB) return indiceA - indiceB;
+    return a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' }) || a.id - b.id;
+  });
+}
 
 // Aplica los filtros de categoría y búsqueda (tolerante a tildes)
 export function filtrarAlojamientos(alojamientos, categoria, busqueda) {
   let filtrados = alojamientos || [];
   const termino = normalizar(busqueda);
 
-  if (categoria && categoria !== 'todos') {
-    const otrosNormalizados = OTROS_GRUPO.map(normalizar);
+  if (categoria) {
     const destino = normalizar(categoria);
-    filtrados = filtrados.filter((item) => {
-      const categoriaItem = normalizar(item.categoria);
-      if (destino === 'otros') return otrosNormalizados.includes(categoriaItem);
-      return categoriaItem === destino;
-    });
+    filtrados = filtrados.filter((item) => normalizar(item.categoria) === destino);
   }
 
   if (termino) {

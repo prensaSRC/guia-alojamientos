@@ -9,7 +9,7 @@ export function AlojamientosProvider({ children }) {
   const { alojamientos, loading, error, recargar } = useAlojamientos();
 
   const [busqueda, setBusqueda] = useState('');
-  const [categoria, setCategoria] = useState('todos');
+  const [categoria, setCategoria] = useState('');
   const [pagina, setPagina] = useState(1);
 
   const cambiarBusqueda = useCallback((valor) => {

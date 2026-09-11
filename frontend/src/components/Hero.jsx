@@ -3,7 +3,8 @@ import Buscador from './Buscador.jsx';
 
 // Hero con imagen del municipio y título (mismo efecto blend que la versión actual).
 // En desktop incluye el buscador; en móvil va aparte, superpuesto al pie del hero.
-export default function Hero() {
+// onBuscar: en la portada el buscador navega a /resultados?q=...
+export default function Hero({ onBuscar }) {
   return (
     <Box
       sx={{
@@ -49,7 +50,7 @@ export default function Hero() {
           </Typography>
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'block' }, mt: 4, mx: 'auto', maxWidth: 560 }}>
-          <Buscador size="large" />
+          <Buscador size="large" onBuscar={onBuscar} />
         </Box>
       </Container>
     </Box>

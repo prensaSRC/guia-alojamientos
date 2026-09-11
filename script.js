@@ -302,7 +302,7 @@ function render() {
     const { items, totalItems, totalPages, currentPage: page } = getPaginatedData(filteredData);
     
     // Actualizar contador
-    resultsCount.textContent = `${totalItems} alojamientos encontrados`;
+    resultsCount.textContent = `${totalItems} establecimientos encontrados`;
     
     // Actualizar etiqueta de categoría
     const searchTerm = searchInput.value.trim();
