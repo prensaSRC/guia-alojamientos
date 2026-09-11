@@ -28,29 +28,30 @@ const META = {
   'complejo de cabañas': { nombre: 'Complejos de Cabañas', icono: Park, color: '#7cc100' },
   colonia: { nombre: 'Colonias', icono: BeachAccess, color: '#b4d006' },
   camping: { nombre: 'Campings', icono: Forest, color: '#b4d006' },
-  'casa de alquiler': { nombre: 'Casas de Alquiler', icono: Cottage, color: '#4a6fa5' },
+  'casa de alquiler': { nombre: 'Casas', icono: Cottage, color: '#4a6fa5' },
   'agencias de viajes': { nombre: 'Agencias de Viajes', icono: Luggage, color: '#4a6fa5' },
   otros: { nombre: 'Otros alojamientos', icono: Hotel, color: '#4a6fa5' },
 };
 
-// Categorías que se agrupan bajo la pestaña "Otros"
-export const OTROS_GRUPO = ['hostería', 'hospedaje', 'hostel', 'colonia', 'residencial', 'complejo de cabañas'];
-
 // Categorías para el select del formulario (todas excepto "otros")
 export const CATEGORIAS_FORMULARIO = Object.keys(META).filter((clave) => clave !== 'otros');
 
-// Pestañas del panel lateral (mismo orden que la versión HTML actual)
-export const CATEGORIAS_PANEL = [
-  'todos',
+// Orden oficial del menú, usado para tarjetas de la portada y listados públicos
+export const ORDEN_CATEGORIAS = [
   'hotel',
   'aparthotel',
   'posada',
+  'hospedaje',
+  'hostería',
+  'residencial',
+  'hostel',
+  'colonia',
   'departamento',
   'cabaña',
+  'apart cabaña',
+  'complejo de cabañas',
   'camping',
   'casa de alquiler',
-  'apart cabaña',
-  'otros',
   'agencias de viajes',
 ];
 
@@ -87,6 +88,16 @@ export function obtenerMetaCategoria(categoria) {
 
 export function obtenerNombreMensaje(categoria) {
   return MENSAJE_NORMALIZADO[normalizar(categoria)] || categoria;
+}
+
+// Slug único por categoría para las URLs (sin tildes, espacios como guiones)
+export function slugCategoria(clave) {
+  return normalizar(clave).replace(/\s+/g, '-');
+}
+
+// Dado un slug de la URL, devuelve la clave de categoría (o null si no existe)
+export function claveDesdeSlug(slug) {
+  return ORDEN_CATEGORIAS.find((clave) => slugCategoria(clave) === slug) || null;
 }
 
 export const ITEMS_POR_PAGINA = 12;

@@ -1,16 +1,26 @@
 import { Clear, Search } from '@mui/icons-material';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
 import { useAlojamientosContext } from '../context/AlojamientosContext.jsx';
+import { useState } from 'react';
 
-export default function Buscador({ size = 'medium', placeholder = 'Buscá por nombre, dirección o teléfono...' }) {
-  const { busqueda, cambiarBusqueda } = useAlojamientosContext();
+// Campo de búsqueda con dos modos:
+// - Por contexto (dentro de una categoría/página): filtra en vivo lo que se lista.
+// - Por navegación (portada): recibe el texto ingresado vía onBuscar al apretar Enter o buscar.
+function BaseBuscador({ size = 'medium', placeholder, valor, onValor, onBuscar }) {
+  const esNavegacion = typeof onBuscar === 'function';
 
   return (
     <TextField
       fullWidth
       size={size}
-      value={busqueda}
-      onChange={(e) => cambiarBusqueda(e.target.value)}
+      value={valor}
+      onChange={(e) => onValor(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' && esNavegacion) {
+          e.preventDefault();
+          onBuscar(valor);
+        }
+      }}
       placeholder={placeholder}
       aria-label="Buscar alojamiento"
       sx={{
@@ -39,16 +49,16 @@ export default function Buscador({ size = 'medium', placeholder = 'Buscá por no
         input: {
           startAdornment: (
             <InputAdornment position="start">
-              <Search color={busqueda ? 'primary' : 'disabled'} />
+              <Search color={valor ? 'primary' : 'disabled'} />
             </InputAdornment>
           ),
-          endAdornment: busqueda ? (
+          endAdornment: valor ? (
             <InputAdornment position="end">
               <IconButton
                 size="small"
                 color="primary"
                 aria-label="Limpiar búsqueda"
-                onClick={() => cambiarBusqueda('')}
+                onClick={() => onValor('')}
                 sx={{
                   backgroundColor: 'rgba(0, 173, 183, 0.1)',
                   '&:hover': { backgroundColor: 'rgba(0, 173, 183, 0.2)' },
@@ -62,4 +72,22 @@ export default function Buscador({ size = 'medium', placeholder = 'Buscá por no
       }}
     />
   );
+}
+
+function BuscadorContexto(props) {
+  const { busqueda, cambiarBusqueda } = useAlojamientosContext();
+  return <BaseBuscador {...props} valor={busqueda} onValor={cambiarBusqueda} />;
+}
+
+function BuscadorNavegacion(props) {
+  const [valor, setValor] = useState('');
+  const buscar = (texto) => {
+    const limpia = (texto || '').trim();
+    if (limpia) props.onBuscar(limpia);
+  };
+  return <BaseBuscador {...props} valor={valor} onValor={setValor} onBuscar={buscar} />;
+}
+
+export default function Buscador(props) {
+  return typeof props.onBuscar === 'function' ? <BuscadorNavegacion {...props} /> : <BuscadorContexto {...props} />;
 }

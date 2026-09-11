@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { obtenerAlojamientos } from '../api/client.js';
+import { ordenarAlojamientos } from '../utils/filtros.js';
 
-// Hook que carga los alojamientos desde la API
+// Hook que carga los alojamientos desde la API, ordenados por categoría y nombre
 export function useAlojamientos() {
   const [alojamientos, setAlojamientos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +13,7 @@ export function useAlojamientos() {
     setError(null);
     try {
       const datos = await obtenerAlojamientos();
-      setAlojamientos(datos);
+      setAlojamientos(ordenarAlojamientos(datos));
     } catch (err) {
       setError(err.message || 'Error al cargar los alojamientos');
     } finally {
@@ -25,7 +26,7 @@ export function useAlojamientos() {
     obtenerAlojamientos()
       .then((datos) => {
         if (!activo) return;
-        setAlojamientos(datos);
+        setAlojamientos(ordenarAlojamientos(datos));
         setError(null);
       })
       .catch((err) => {

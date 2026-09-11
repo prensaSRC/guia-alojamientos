@@ -1,22 +1,23 @@
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { useAlojamientosContext } from '../context/AlojamientosContext.jsx';
-import { CATEGORIAS_PANEL, obtenerMetaCategoria } from '../utils/categorias.js';
+import { useNavigate } from 'react-router-dom';
+import { ORDEN_CATEGORIAS, obtenerMetaCategoria, slugCategoria } from '../utils/categorias.js';
 
-// Panel lateral con las pestañas de categorías (también se usa dentro del Drawer móvil)
-export default function FiltroCategoria({ onCategoryChange }) {
-  const { categoria, cambiarCategoria } = useAlojamientosContext();
+// Switcher de categorías: navega a /categoria/<slug>.
+// Se usa como sidebar en desktop y dentro del Drawer móvil.
+export default function FiltroCategoria({ actual, onCategoryChange }) {
+  const navigate = useNavigate();
 
   const seleccionar = (clave) => {
-    cambiarCategoria(clave);
+    navigate(`/categoria/${slugCategoria(clave)}`);
     if (onCategoryChange) onCategoryChange();
   };
 
   return (
-    <List component="nav" disablePadding aria-label="Filtrar por categoría">
-      {CATEGORIAS_PANEL.map((clave) => {
+    <List component="nav" disablePadding aria-label="Cambiar de categoría">
+      {ORDEN_CATEGORIAS.map((clave) => {
         const meta = obtenerMetaCategoria(clave);
         const Icono = meta.icono;
-        const activo = categoria === clave;
+        const activo = clave === actual;
         return (
           <ListItemButton
             key={clave}
