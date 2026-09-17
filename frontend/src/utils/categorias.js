@@ -7,9 +7,9 @@ import {
   Groups,
   Home,
   Hotel,
+  House,
   Luggage,
   Park,
-  Restaurant,
 } from '@mui/icons-material';
 import { normalizar } from './normalizar.js';
 
@@ -19,7 +19,7 @@ const META = {
   aparthotel: { nombre: 'Aparthoteles', icono: Apartment, color: '#00adb7' },
   posada: { nombre: 'Posadas', icono: Bed, color: '#ff7300' },
   residencial: { nombre: 'Residenciales', icono: Home, color: '#ff7300' },
-  'hostería': { nombre: 'Hosterías', icono: Restaurant, color: '#ff7300' },
+  'hostería': { nombre: 'Hosterías', icono: House, color: '#ff7300' },
   hospedaje: { nombre: 'Hospedajes', icono: Bed, color: '#ff7300' },
   hostel: { nombre: 'Hosteles', icono: Groups, color: '#ff7300' },
   departamento: { nombre: 'Departamentos', icono: Apartment, color: '#ff9b00' },
