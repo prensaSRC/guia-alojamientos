@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { Box, Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { alpha, Box, Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from '@mui/material';
 import { Delete, Edit, Language, NavigateBefore, NavigateNext, WhatsApp } from '@mui/icons-material';
 import { obtenerEnlacesTelefono } from '../../utils/telefonos.js';
 import IrAPagina from '../IrAPagina.jsx';
+import { GUIA_ACTIVA } from '../../guia.js';
 
 const FILAS_POR_PAGINA = 15;
 
-// Link wa.me para verificar el WhatsApp de un alojamiento (null si no tiene)
+// Link wa.me para verificar el WhatsApp de un local (null si no tiene)
 function enlaceWhatsApp(alojamiento) {
   return obtenerEnlacesTelefono(alojamiento).waHref || null;
 }
@@ -26,9 +28,11 @@ const visibilidad = {
   ocultoHastaMd: { display: { xs: 'none', md: 'table-cell' } },
 };
 
-export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }) {
+export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar, sustantivo: sustantivoProp }) {
+  const theme = useTheme();
   const [pagina, setPagina] = useState(0);
 
+  const sustantivo = sustantivoProp || GUIA_ACTIVA.sustantivo;
   const totalPaginas = Math.max(1, Math.ceil(alojamientos.length / FILAS_POR_PAGINA));
   const paginaSegura = Math.min(pagina, totalPaginas - 1);
 
@@ -37,7 +41,7 @@ export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }
   const fin = Math.min(alojamientos.length, (paginaSegura + 1) * FILAS_POR_PAGINA);
 
   return (
-    <Paper variant="outlined" sx={{ borderRadius: 2, boxShadow: '0 2px 12px rgba(0, 173, 183, 0.06)' }}>
+    <Paper variant="outlined" sx={{ borderRadius: 2, boxShadow: `0 2px 12px ${alpha(theme.palette.primary.main, 0.06)}` }}>
       <TableContainer>
         <Table size="small" stickyHeader>
           <TableHead>
@@ -57,7 +61,7 @@ export default function TablaAlojamientos({ alojamientos, onEditar, onEliminar }
             {filas.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={5} align="center" sx={{ py: 6, color: 'text.secondary' }}>
-                  No hay alojamientos que coincidan con el filtro.
+                  No hay {sustantivo.plural} que coincidan con el filtro.
                 </TableCell>
               </TableRow>
             ) : (

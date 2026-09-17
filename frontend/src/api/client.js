@@ -1,4 +1,12 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+import { GUIA_ACTIVA, GUIAS } from '../guia.js';
+
+// Ruta de la API según el rubro (ej. "/alojamientos", "/gastronomia").
+// Si no se pasa rubro, usa el rubro activo del sitio compilado.
+function rutaRubro(rubro) {
+  const guia = (rubro && GUIAS[rubro]) || GUIA_ACTIVA;
+  return guia.ruta;
+}
 
 // Lee el token persistido en localStorage (si lo hay)
 function obtenerToken() {
@@ -43,14 +51,14 @@ export function pedirAutenticado(ruta, opciones = {}) {
   });
 }
 
-// GET /api/alojamientos -> todos los alojamientos
-export function obtenerAlojamientos() {
-  return pedir('/alojamientos');
+// GET /api/:rubro -> todos los registros de ese rubro
+export function obtenerAlojamientos(rubro) {
+  return pedir(rutaRubro(rubro));
 }
 
-// GET /api/alojamientos/:id -> un alojamiento por id
-export function obtenerAlojamiento(id) {
-  return pedir(`/alojamientos/${id}`);
+// GET /api/:rubro/:id -> un registro por id
+export function obtenerAlojamiento(id, rubro) {
+  return pedir(`${rutaRubro(rubro)}/${id}`);
 }
 
 // ---- Autenticación ----
@@ -67,17 +75,17 @@ export function registrarUsuarioApi(datos) {
 
 // ---- Operaciones de escritura (protegidas) ----
 
-// POST /api/alojamientos
-export function crearAlojamientoApi(datos) {
-  return pedirAutenticado('/alojamientos', { method: 'POST', body: datos });
+// POST /api/:rubro
+export function crearAlojamientoApi(datos, rubro) {
+  return pedirAutenticado(rutaRubro(rubro), { method: 'POST', body: datos });
 }
 
-// PUT /api/alojamientos/:id
-export function actualizarAlojamientoApi(id, datos) {
-  return pedirAutenticado(`/alojamientos/${id}`, { method: 'PUT', body: datos });
+// PUT /api/:rubro/:id
+export function actualizarAlojamientoApi(id, datos, rubro) {
+  return pedirAutenticado(`${rutaRubro(rubro)}/${id}`, { method: 'PUT', body: datos });
 }
 
-// DELETE /api/alojamientos/:id
-export function eliminarAlojamientoApi(id) {
-  return pedirAutenticado(`/alojamientos/${id}`, { method: 'DELETE' });
+// DELETE /api/:rubro/:id
+export function eliminarAlojamientoApi(id, rubro) {
+  return pedirAutenticado(`${rutaRubro(rubro)}/${id}`, { method: 'DELETE' });
 }

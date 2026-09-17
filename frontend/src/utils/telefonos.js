@@ -1,8 +1,9 @@
 import { obtenerNombreMensaje } from './categorias.js';
+import { GUIA_ACTIVA } from '../guia.js';
 
 function mensajeWhatsApp(item) {
   const categoria = obtenerNombreMensaje(item.categoria);
-  return `Hola, lo contacto desde la Guía de Alojamientos de Santa Rosa de Calamuchita para consultar disponibilidad en ${categoria} ${item.nombre}.`;
+  return `Hola, lo contacto desde ${GUIA_ACTIVA.whatsapp.prefijo} para ${GUIA_ACTIVA.whatsapp.accion} ${categoria} ${item.nombre}.`;
 }
 
 // Áreas telefónicas de Argentina detectadas en la guía (Buenos Aires,

@@ -1,12 +1,15 @@
 import { Clear, Search } from '@mui/icons-material';
-import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { alpha, IconButton, InputAdornment, TextField } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { useAlojamientosContext } from '../context/AlojamientosContext.jsx';
 import { useState } from 'react';
+import { GUIA_ACTIVA } from '../guia.js';
 
 // Campo de búsqueda con dos modos:
 // - Por contexto (dentro de una categoría/página): filtra en vivo lo que se lista.
 // - Por navegación (portada): recibe el texto ingresado vía onBuscar al apretar Enter o buscar.
 function BaseBuscador({ size = 'medium', placeholder, valor, onValor, onBuscar }) {
+  const theme = useTheme();
   const esNavegacion = typeof onBuscar === 'function';
 
   return (
@@ -22,7 +25,7 @@ function BaseBuscador({ size = 'medium', placeholder, valor, onValor, onBuscar }
         }
       }}
       placeholder={placeholder}
-      aria-label="Buscar alojamiento"
+      aria-label={`Buscar ${GUIA_ACTIVA.sustantivo.singular}`}
       sx={{
         '& .MuiInputBase-root': {
           fontWeight: 400,
@@ -34,14 +37,14 @@ function BaseBuscador({ size = 'medium', placeholder, valor, onValor, onBuscar }
         '& .MuiOutlinedInput-root': {
           borderRadius: 999,
           backgroundColor: '#fff',
-          boxShadow: 'inset 0 0 0 1px rgba(0, 173, 183, 0.4), 0 8px 24px rgba(0, 32, 36, 0.16)',
+          boxShadow: `inset 0 0 0 1px ${alpha(theme.palette.primary.main, 0.4)}, 0 8px 24px rgba(0, 32, 36, 0.16)`,
           transition: 'box-shadow 0.2s ease, background-color 0.2s ease',
           '&:hover': {
-            boxShadow: 'inset 0 0 0 1px rgba(0, 173, 183, 0.65), 0 8px 24px rgba(0, 32, 36, 0.16)',
+            boxShadow: `inset 0 0 0 1px ${alpha(theme.palette.primary.main, 0.65)}, 0 8px 24px rgba(0, 32, 36, 0.16)`,
           },
           '&.Mui-focused': {
             backgroundColor: '#fff',
-            boxShadow: 'inset 0 0 0 2px rgba(0, 173, 183, 0.7), 0 8px 24px rgba(0, 32, 36, 0.16)',
+            boxShadow: `inset 0 0 0 2px ${alpha(theme.palette.primary.main, 0.7)}, 0 8px 24px rgba(0, 32, 36, 0.16)`,
           },
         },
       }}
@@ -60,8 +63,8 @@ function BaseBuscador({ size = 'medium', placeholder, valor, onValor, onBuscar }
                 aria-label="Limpiar búsqueda"
                 onClick={() => onValor('')}
                 sx={{
-                  backgroundColor: 'rgba(0, 173, 183, 0.1)',
-                  '&:hover': { backgroundColor: 'rgba(0, 173, 183, 0.2)' },
+                  backgroundColor: alpha(theme.palette.primary.main, 0.1),
+                  '&:hover': { backgroundColor: alpha(theme.palette.primary.main, 0.2) },
                 }}
               >
                 <Clear fontSize="small" />

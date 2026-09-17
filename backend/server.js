@@ -3,7 +3,8 @@ import express from "express";
 import cors from "cors";
 
 import { sequelize, createDatabaseIfNotExists } from "./src/config/database.js";
-import alojamientoRoutes from "./src/routes/alojamiento.routes.js";
+import { Alojamiento, Gastronomia } from "./src/models/index.js";
+import { crearRutasEstablecimientos } from "./src/routes/establecimientos.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
 import { notFound } from "./src/middlewares/notFound.js";
 import { errorHandler } from "./src/middlewares/errorHandler.js";
@@ -29,7 +30,8 @@ app.get("/api/health", (req, res) => {
 
 // Rutas de la API
 app.use("/api/auth", authRoutes);
-app.use("/api/alojamientos", alojamientoRoutes);
+app.use("/api/alojamientos", crearRutasEstablecimientos(Alojamiento, { etiquetaSingular: "Alojamiento" }));
+app.use("/api/gastronomia", crearRutasEstablecimientos(Gastronomia, { etiquetaSingular: "Local gastronómico" }));
 
 // Middlewares de 404 y errores
 app.use(notFound);
