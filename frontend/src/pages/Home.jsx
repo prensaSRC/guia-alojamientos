@@ -6,6 +6,7 @@ import CategoriaCard from '../components/CategoriaCard.jsx';
 import EsqueletoTarjetas from '../components/EsqueletoTarjetas.jsx';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
+import { GUIA_ACTIVA } from '../guia.js';
 import { useAlojamientos } from '../hooks/useAlojamientos.js';
 import { ORDEN_CATEGORIAS } from '../utils/categorias.js';
 import { normalizar } from '../utils/normalizar.js';
@@ -42,10 +43,10 @@ export default function Home() {
       <Container maxWidth="lg" sx={{ mt: { xs: 3, md: 5 } }}>
         <Box sx={{ textAlign: 'center', mb: { xs: 3, md: 4 } }}>
           <Typography variant="h5" component="h2" sx={{ color: 'text.primary' }}>
-            Elegí el tipo de alojamiento
+            {GUIA_ACTIVA.ctaPortada}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Todas las opciones disponibles para tu estadía en Santa Rosa de Calamuchita
+            {GUIA_ACTIVA.ctaSubtitulo}
           </Typography>
         </Box>
 

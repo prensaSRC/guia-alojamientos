@@ -10,6 +10,7 @@ import FiltroCategoria from '../components/FiltroCategoria.jsx';
 import Header from '../components/Header.jsx';
 import Paginacion from '../components/Paginacion.jsx';
 import { useAlojamientosContext } from '../context/AlojamientosContext.jsx';
+import { GUIA_ACTIVA } from '../guia.js';
 
 // Resultados de la búsqueda global: lista desde la URL ?q=...
 export default function Resultados() {
@@ -83,7 +84,7 @@ export default function Resultados() {
                 {q ? `Resultados de "${q}"` : 'Resultados de búsqueda'}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {paginacion.totalItems} {paginacion.totalItems === 1 ? 'alojamiento' : 'alojamientos'}
+                {paginacion.totalItems} {paginacion.totalItems === 1 ? GUIA_ACTIVA.sustantivo.singular : GUIA_ACTIVA.sustantivo.plural}
               </Typography>
             </Stack>
 
@@ -96,7 +97,7 @@ export default function Resultados() {
 
               {!loading && error && (
                 <Alert severity="error" action={<Button onClick={recargar}>Reintentar</Button>} sx={{ borderRadius: 2 }}>
-                  No se pudieron cargar los alojamientos. Verificá que el backend esté corriendo en la API configurada.
+                  {`No se pudieron cargar los ${GUIA_ACTIVA.sustantivo.plural}. Verificá que el backend esté corriendo en la API configurada.`}
                 </Alert>
               )}
 

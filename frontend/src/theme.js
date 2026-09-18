@@ -1,4 +1,5 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, alpha } from '@mui/material/styles';
+import { GUIA_ACTIVA } from './guia.js';
 
 const MUNI = {
   turquesa: '#00adb7',
@@ -17,13 +18,18 @@ const MUNI = {
 
 export const COLORES_MUNI = MUNI;
 
+// Color principal del rubro activo (turquesa para alojamientos, rojo-naranja para gastronomía)
+const PRINCIPAL = GUIA_ACTIVA.color.main;
+const PRINCIPAL_DARK = GUIA_ACTIVA.color.dark;
+const PRINCIPAL_LIGHT = GUIA_ACTIVA.color.light;
+
 // Sombra suave teñida del color de marca (nunca gris puro sobre fondos claros)
-const sombraTintada = (opacidad) => `0 2px 12px rgba(0, 173, 183, ${opacidad})`;
+const sombraTintada = (opacidad) => `0 2px 12px ${alpha(PRINCIPAL, opacidad)}`;
 
 const theme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: MUNI.turquesa, dark: MUNI.turquesaDark, light: MUNI.turquesaLight },
+    primary: { main: PRINCIPAL, dark: PRINCIPAL_DARK, light: PRINCIPAL_LIGHT },
     secondary: { main: MUNI.naranja, dark: MUNI.turquesaDark },
     warning: { main: MUNI.naranjaLight },
     success: { main: MUNI.verde },
@@ -53,7 +59,7 @@ const theme = createTheme({
           backgroundColor: MUNI.fondo,
         },
         ':focus-visible': {
-          outline: `2px solid ${MUNI.turquesa}`,
+          outline: `2px solid ${PRINCIPAL}`,
           outlineOffset: 2,
         },
       },

@@ -1,13 +1,15 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@mui/material';
 import { WarningAmber } from '@mui/icons-material';
+import { GUIA_ACTIVA } from '../../guia.js';
 
-// Modal de confirmación antes de eliminar un alojamiento
-export default function ConfirmarEliminacion({ abierto, nombre, guardando, onConfirmar, onCancelar }) {
+// Modal de confirmación antes de eliminar un registro
+export default function ConfirmarEliminacion({ abierto, nombre, guardando, onConfirmar, onCancelar, etiqueta: etiquetaProp }) {
+  const etiqueta = etiquetaProp || GUIA_ACTIVA.sustantivo.singular;
   return (
     <Dialog open={abierto} onClose={onCancelar} maxWidth="xs" fullWidth>
       <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'error.main' }}>
         <WarningAmber />
-        Eliminar alojamiento
+        {`Eliminar ${etiqueta}`}
       </DialogTitle>
       <DialogContent>
         <Typography>

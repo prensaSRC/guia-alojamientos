@@ -1,5 +1,7 @@
 import { Menu } from '@mui/icons-material';
+import { alpha } from '@mui/material/styles';
 import { AppBar, Box, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { GUIA_ACTIVA } from '../guia.js';
 
 // Barra superior con logo y título. En móvil se apilan centrados
 // (el buscador vive dentro del Hero); el menú queda a la derecha.
@@ -13,7 +15,7 @@ export default function Header({ onMenuClick, conMenu = true }) {
       position="sticky"
       color="inherit"
       elevation={0}
-      sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.04)', boxShadow: '0 4px 16px rgba(0, 173, 183, 0.07)' }}
+      sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.04)', boxShadow: `0 4px 16px ${alpha(theme.palette.primary.main, 0.07)}` }}
     >
       <Toolbar
         sx={{
@@ -47,7 +49,7 @@ export default function Header({ onMenuClick, conMenu = true }) {
             fontSize: { xs: '1.1rem', md: '1.3rem' },
           }}
         >
-          Guía de Alojamientos
+          {GUIA_ACTIVA.titulo}
         </Typography>
         {esMovil && conMenu && (
           <Box
@@ -69,8 +71,8 @@ export default function Header({ onMenuClick, conMenu = true }) {
                 animation: 'menuPulso 1.4s ease-out 3',
               },
               '@keyframes menuPulso': {
-                '0%': { transform: 'scale(1)', opacity: 1, borderColor: 'rgba(0, 173, 183, 0.7)' },
-                '100%': { transform: 'scale(1.65)', opacity: 0, borderColor: 'rgba(0, 173, 183, 0)' },
+                '0%': { transform: 'scale(1)', opacity: 1, borderColor: alpha(theme.palette.primary.main, 0.7) },
+                '100%': { transform: 'scale(1.65)', opacity: 0, borderColor: alpha(theme.palette.primary.main, 0) },
               },
               '@media (prefers-reduced-motion: reduce)': { '&::after': { animation: 'none' } },
             }}
@@ -82,7 +84,7 @@ export default function Header({ onMenuClick, conMenu = true }) {
                 backgroundColor: 'primary.main',
                 color: '#fff',
                 borderRadius: '50%',
-                boxShadow: '0 4px 14px rgba(0, 173, 183, 0.4)',
+                boxShadow: `0 4px 14px ${alpha(theme.palette.primary.main, 0.4)}`,
                 '&:hover': { backgroundColor: 'primary.dark' },
               }}
             >

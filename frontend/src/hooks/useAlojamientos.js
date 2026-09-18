@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { obtenerAlojamientos } from '../api/client.js';
 import { ordenarAlojamientos } from '../utils/filtros.js';
+import { GUIA_ACTIVA } from '../guia.js';
 
-// Hook que carga los alojamientos desde la API, ordenados por categoría y nombre
+const MENSAJE_ERROR = `Error al cargar los ${GUIA_ACTIVA.sustantivo.plural}`;
+
+// Hook que carga los registros de la guía activa desde la API, ordenados por categoría y nombre
 export function useAlojamientos() {
   const [alojamientos, setAlojamientos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +18,7 @@ export function useAlojamientos() {
       const datos = await obtenerAlojamientos();
       setAlojamientos(ordenarAlojamientos(datos));
     } catch (err) {
-      setError(err.message || 'Error al cargar los alojamientos');
+      setError(err.message || MENSAJE_ERROR);
     } finally {
       setLoading(false);
     }
@@ -31,7 +34,7 @@ export function useAlojamientos() {
       })
       .catch((err) => {
         if (!activo) return;
-        setError(err.message || 'Error al cargar los alojamientos');
+        setError(err.message || MENSAJE_ERROR);
       })
       .finally(() => {
         if (activo) setLoading(false);

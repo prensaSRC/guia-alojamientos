@@ -1,10 +1,12 @@
 import { Language, LocationOn, Phone, Smartphone, WhatsApp } from '@mui/icons-material';
-import { Box, Button, Card, CardActions, CardContent, Chip, Typography } from '@mui/material';
+import { alpha, Box, Button, Card, CardActions, CardContent, Chip, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { obtenerMetaCategoria } from '../utils/categorias.js';
 import { obtenerTelefonosVisibles } from '../utils/telefonos.js';
 
-// Tarjeta individual de un alojamiento
+// Tarjeta individual de un registro de la guía (alojamiento, local gastronómico, ...)
 export default function AlojamientoCard({ alojamiento, indice = 0 }) {
+  const theme = useTheme();
   const meta = obtenerMetaCategoria(alojamiento.categoria);
   const IconoCategoria = meta.icono;
   const telefonos = obtenerTelefonosVisibles(alojamiento);
@@ -30,7 +32,7 @@ export default function AlojamientoCard({ alojamiento, indice = 0 }) {
         },
         '@media (prefers-reduced-motion: reduce)': { animation: 'none' },
         '&:hover': {
-          boxShadow: '0 12px 48px rgba(0, 173, 183, 0.15)',
+          boxShadow: `0 12px 48px ${alpha(theme.palette.primary.main, 0.15)}`,
           transform: 'translateY(-2px)',
         },
       }}

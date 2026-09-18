@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Alert, Box, Button, Container, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useAuth } from '../context/AuthContext.jsx';
+import { GUIA_ACTIVA } from '../guia.js';
 
 export default function Login() {
   const { login, loading, error } = useAuth();
@@ -26,7 +27,7 @@ export default function Login() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: 'linear-gradient(135deg, #00adb7 0%, #008a92 100%)',
+        backgroundImage: `linear-gradient(135deg, ${GUIA_ACTIVA.color.main} 0%, ${GUIA_ACTIVA.color.dark} 100%)`,
         p: 2,
       }}
     >
@@ -74,7 +75,7 @@ export default function Login() {
 
             <Typography variant="body2" color="text.secondary" align="center">
               <Link component={RouterLink} to="/" underline="hover">
-                Volver a la guía de alojamientos
+                {GUIA_ACTIVA.volverLogin}
               </Link>
             </Typography>
           </Stack>

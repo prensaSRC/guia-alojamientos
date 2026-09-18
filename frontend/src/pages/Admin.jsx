@@ -1,17 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useTheme } from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Alert, AppBar, Box, Button, Chip, CircularProgress, Divider, InputAdornment, Paper, Stack, TextField, Toolbar, Typography } from '@mui/material';
 import { Add, Apartment, Home as HomeIcon, Language, Logout, Person, Search, Storefront, WhatsApp } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext.jsx';
 import { actualizarAlojamientoApi, crearAlojamientoApi, eliminarAlojamientoApi, obtenerAlojamientos } from '../api/client.js';
 import { normalizar } from '../utils/normalizar.js';
+import { GUIAS } from '../guia.js';
 import TablaAlojamientos from '../components/admin/TablaAlojamientos.jsx';
 import FormularioAlojamiento from '../components/admin/FormularioAlojamiento.jsx';
 import ConfirmarEliminacion from '../components/admin/ConfirmarEliminacion.jsx';
+import SelectorRubro from '../components/admin/SelectorRubro.jsx';
 
 function TarjetaEstadistica({ icono, etiqueta, valor, color = 'primary.main' }) {
+  const theme = useTheme();
   return (
-    <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, display: 'flex', alignItems: 'center', gap: 2, flexGrow: 1, minWidth: 180, boxShadow: '0 2px 12px rgba(0, 173, 183, 0.06)' }}>
+    <Paper variant="outlined" sx={{ p: 2, borderRadius: 2, display: 'flex', alignItems: 'center', gap: 2, flexGrow: 1, minWidth: 180, boxShadow: `0 2px 12px ${alpha(theme.palette.primary.main, 0.06)}` }}>
       <Box
         sx={{
           width: 44,
@@ -38,9 +43,19 @@ function TarjetaEstadistica({ icono, etiqueta, valor, color = 'primary.main' }) 
   );
 }
 
+// Capitaliza la primera letra (usado para títulos como "Locales gastronómicos")
+function capitalizar(texto) {
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
+
 export default function Admin() {
   const { usuario, logout } = useAuth();
   const navigate = useNavigate();
+  const theme = useTheme();
+
+  // Rubro seleccionado en el panel (alojamientos o gastronomía)
+  const [rubro, setRubro] = useState('alojamientos');
+  const guia = GUIAS[rubro];
 
   const [alojamientos, setAlojamientos] = useState([]);
   const [cargando, setCargando] = useState(true);
@@ -56,7 +71,12 @@ export default function Admin() {
 
   useEffect(() => {
     let activo = true;
-    obtenerAlojamientos()
+    setCargando(true);
+    setError(null);
+    setFormularioAbierto(false);
+    setEnEdicion(null);
+    setEliminandoA(null);
+    obtenerAlojamientos(rubro)
       .then((datos) => {
         if (activo) {
           setAlojamientos(datos);
@@ -65,7 +85,7 @@ export default function Admin() {
       })
       .catch((err) => {
         if (!activo) return;
-        setError(err.message || 'Error al cargar los alojamientos');
+        setError(err.message || `Error al cargar los ${guia.sustantivo.plural}`);
         if (/token/i.test(err.message)) {
           logout();
           navigate('/login');
@@ -77,7 +97,7 @@ export default function Admin() {
     return () => {
       activo = false;
     };
-  }, [logout, navigate]);
+  }, [rubro, logout, navigate, guia.sustantivo.plural]);
 
   // Estadísticas
   const estadisticas = useMemo(() => {
@@ -118,11 +138,11 @@ export default function Admin() {
     setGuardando(true);
     try {
       if (enEdicion) {
-        await actualizarAlojamientoApi(enEdicion.id, payload);
+        await actualizarAlojamientoApi(enEdicion.id, payload, rubro);
       } else {
-        await crearAlojamientoApi(payload);
+        await crearAlojamientoApi(payload, rubro);
       }
-      const datos = await obtenerAlojamientos();
+      const datos = await obtenerAlojamientos(rubro);
       setAlojamientos(datos);
       setFormularioAbierto(false);
     } finally {
@@ -135,11 +155,11 @@ export default function Admin() {
     setEliminando(true);
     setError(null);
     try {
-      await eliminarAlojamientoApi(eliminandoA.id);
+      await eliminarAlojamientoApi(eliminandoA.id, rubro);
       setAlojamientos((previos) => previos.filter((a) => a.id !== eliminandoA.id));
       setEliminandoA(null);
     } catch (err) {
-      setError(err.message || 'No se pudo eliminar el alojamiento');
+      setError(err.message || `No se pudo eliminar el ${guia.sustantivo.singular}`);
       if (/token/i.test(err.message)) {
         logout();
         navigate('/login');
@@ -154,9 +174,12 @@ export default function Admin() {
     navigate('/login');
   };
 
+  const etiquetaTotal = capitalizar(guia.sustantivo.plural);
+  const etiquetaNuevo = `Nuevo ${guia.sustantivo.singular}`;
+
   return (
     <>
-      <AppBar position="sticky" color="inherit" elevation={0} sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.04)', boxShadow: '0 4px 16px rgba(0, 173, 183, 0.07)' }}>
+      <AppBar position="sticky" color="inherit" elevation={0} sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.04)', boxShadow: `0 4px 16px ${alpha(theme.palette.primary.main, 0.07)}` }}>
         <Toolbar sx={{ gap: { xs: 1, md: 2 }, flexWrap: 'nowrap' }}>
           <Typography
             variant="h6"
@@ -194,18 +217,21 @@ export default function Admin() {
 
       <Box sx={{ p: { xs: 2, md: 3 }, maxWidth: 1400, mx: 'auto' }}>
         <Stack spacing={3}>
-          <Box>
-            <Typography variant="h5" sx={{ color: 'text.primary' }}>
-              Alojamientos
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Gestioná los alojamientos de la guía turística
-            </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 2 }}>
+            <Box>
+              <Typography variant="h5" sx={{ color: 'text.primary' }}>
+                {guia.titulo}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {`Gestioná los ${guia.sustantivo.plural} de la guía turística`}
+              </Typography>
+            </Box>
+            <SelectorRubro rubro={rubro} onChange={setRubro} disabled={cargando} />
           </Box>
 
           {/* Estadísticas */}
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-            <TarjetaEstadistica icono={<Storefront />} etiqueta="Alojamientos" valor={cargando ? '…' : estadisticas.total} color="#00adb7" />
+            <TarjetaEstadistica icono={<Storefront />} etiqueta={etiquetaTotal} valor={cargando ? '…' : estadisticas.total} color={guia.color.main} />
             <TarjetaEstadistica icono={<Apartment />} etiqueta="Categorías" valor={cargando ? '…' : estadisticas.categorias} color="#ff7300" />
             <TarjetaEstadistica icono={<Language />} etiqueta="Con sitio web" valor={cargando ? '…' : estadisticas.conWeb} color="#7cc100" />
             <TarjetaEstadistica icono={<WhatsApp />} etiqueta="Con WhatsApp" valor={cargando ? '…' : estadisticas.conWhatsapp} color="#25d366" />
@@ -236,7 +262,7 @@ export default function Admin() {
               }}
             />
             <Button variant="contained" startIcon={<Add />} onClick={abrirCrear} sx={{ whiteSpace: 'nowrap', flexShrink: 0, color: '#fff' }}>
-              Nuevo Alojamiento
+              {etiquetaNuevo}
             </Button>
           </Stack>
 
@@ -247,7 +273,7 @@ export default function Admin() {
               <CircularProgress />
             </Box>
           ) : (
-            <TablaAlojamientos alojamientos={filtrados} onEditar={abrirEditar} onEliminar={setEliminandoA} />
+            <TablaAlojamientos alojamientos={filtrados} onEditar={abrirEditar} onEliminar={setEliminandoA} sustantivo={guia.sustantivo} />
           )}
         </Stack>
       </Box>
@@ -258,6 +284,7 @@ export default function Admin() {
         guardando={guardando}
         onGuardar={guardar}
         onCancelar={() => setFormularioAbierto(false)}
+        guia={guia}
       />
 
       <ConfirmarEliminacion
@@ -266,6 +293,7 @@ export default function Admin() {
         guardando={eliminando}
         onConfirmar={confirmarEliminar}
         onCancelar={() => setEliminandoA(null)}
+        etiqueta={guia.sustantivo.singular}
       />
     </>
   );

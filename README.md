@@ -2,6 +2,21 @@
 
 Sitio público para consultar los alojamientos turísticos del municipio, con un panel de administración protegido para gestionarlos (crear, editar, eliminar).
 
+> **Multi-rubro**: el mismo repositorio compila una web distinta por rubro
+> turístico (`alojamientos`, `gastronomia`, ...). Todo lo que cambia entre
+> rubros vive en `frontend/src/guia.js` (`GUIAS` + `GUIA_ACTIVA`): colores,
+> textos, hero, sustantivos y categorías con sus íconos. El rubro se elige al
+> compilar con `VITE_RUBRO` (por defecto `alojamientos`) y cada rubro usa su
+> propia tabla en la misma base de datos (`alojamientos`, `gastronomia`, ...).
+> El **panel de administración** (`/admin`) es único y edita cualquier rubro:
+> incluye un selector "Alojamientos | Gastronomía" en la parte superior
+> (`frontend/src/components/admin/SelectorRubro.jsx`).
+>
+> El backend expone un CRUD genérico por rubro: `/api/alojamientos` y
+> `/api/gastronomia` comparten el mismo controlador/validador
+> (`backend/src/controllers/establecimiento.controller.js` y
+> `backend/src/routes/establecimientos.routes.js`).
+
 ## Estructura del proyecto
 
 ```

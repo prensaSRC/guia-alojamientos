@@ -8,6 +8,7 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "seed": "node src/seed/seed.js",
+    "seed:gastronomia": "node src/seed/seed-gastronomia.js",
     "seed:admin": "node src/seed/seed-admin.js"
   },
   "dependencies": {

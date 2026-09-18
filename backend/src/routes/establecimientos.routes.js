@@ -1,18 +1,10 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import {
-  actualizar,
-  crear,
-  eliminar,
-  obtenerPorId,
-  obtenerTodos
-} from '../controllers/alojamiento.controller.js';
+import { crearEstablecimientoController } from '../controllers/establecimiento.controller.js';
 import { verificarToken } from '../middlewares/auth.js';
 
-const router = Router();
-
 // ============ Validaciones compartidas (crear y actualizar) ============
-const validarAlojamiento = [
+const validacionesComunes = [
   body('nombre').trim().notEmpty().withMessage('El nombre es obligatorio'),
   body('categoria').trim().notEmpty().withMessage('La categoría es obligatoria'),
   body('direccion').trim().notEmpty().withMessage('La dirección es obligatoria'),
@@ -37,13 +29,19 @@ const validarAlojamiento = [
     .withMessage('El WhatsApp debe ser un número de 10 a 16 dígitos')
 ];
 
-// Rutas públicas de lectura
-router.get('/', obtenerTodos);
-router.get('/:id', obtenerPorId);
+// Fábrica de rutas CRUD por rubro (mismas validaciones y protección JWT)
+export function crearRutasEstablecimientos(Modelo, opciones = {}) {
+  const router = Router();
+  const controlador = crearEstablecimientoController(Modelo, opciones);
 
-// Rutas protegidas de escritura (requieren token JWT)
-router.post('/', verificarToken, validarAlojamiento, crear);
-router.put('/:id', verificarToken, validarAlojamiento, actualizar);
-router.delete('/:id', verificarToken, eliminar);
+  // Rutas públicas de lectura
+  router.get('/', controlador.obtenerTodos);
+  router.get('/:id', controlador.obtenerPorId);
 
-export default router;
+  // Rutas protegidas de escritura (requieren token JWT)
+  router.post('/', verificarToken, ...validacionesComunes, controlador.crear);
+  router.put('/:id', verificarToken, ...validacionesComunes, controlador.actualizar);
+  router.delete('/:id', verificarToken, controlador.eliminar);
+
+  return router;
+}

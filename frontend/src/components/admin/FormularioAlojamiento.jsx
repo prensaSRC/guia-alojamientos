@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Alert, Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from '@mui/material';
 import TelefonosEditor from './TelefonosEditor.jsx';
-import { CATEGORIAS_FORMULARIO, obtenerMetaCategoria } from '../../utils/categorias.js';
 import { filaTelefonoVacia, serializarTelefonos, telefonosAApi } from '../../utils/telefonos.js';
 
 // Si la web no trae esquema, lo agrega para que pase la validación del backend
@@ -12,7 +11,8 @@ function normalizarWeb(valor) {
   return `https://${v}`;
 }
 
-export default function FormularioAlojamiento({ abierto, alojamiento, guardando, onGuardar, onCancelar }) {
+// El formulario recibe la config de la guía activa (rubro) para sus categorías y textos
+export default function FormularioAlojamiento({ abierto, alojamiento, guardando, onGuardar, onCancelar, guia }) {
   const esEdicion = Boolean(alojamiento);
   const [nombre, setNombre] = useState('');
   const [categoria, setCategoria] = useState('');
@@ -20,6 +20,12 @@ export default function FormularioAlojamiento({ abierto, alojamiento, guardando,
   const [web, setWeb] = useState('');
   const [telefonos, setTelefonos] = useState([filaTelefonoVacia()]);
   const [error, setError] = useState(null);
+
+  const sustantivo = guia.sustantivo.singular;
+  const opcionesCategoria = useMemo(
+    () => guia.categorias.ORDEN.map((clave) => ({ clave, ...guia.categorias.META[clave] })),
+    [guia],
+  );
 
   // Carga los valores cuando se abre el diálogo (crear o editar)
   // oxlint-disable react/set-state-in-effect
@@ -71,13 +77,13 @@ export default function FormularioAlojamiento({ abierto, alojamiento, guardando,
       };
       await onGuardar(payload);
     } catch (err) {
-      setError(err.message || 'No se pudo guardar el alojamiento');
+      setError(err.message || `No se pudo guardar el ${sustantivo}`);
     }
   };
 
   return (
     <Dialog open={abierto} onClose={onCancelar} maxWidth="md" fullWidth>
-      <DialogTitle>{esEdicion ? 'Editar alojamiento' : 'Nuevo alojamiento'}</DialogTitle>
+      <DialogTitle>{esEdicion ? `Editar ${sustantivo}` : `Nuevo ${sustantivo}`}</DialogTitle>
       <DialogContent dividers>
         <Stack spacing={2}>
           {error && (
@@ -97,9 +103,9 @@ export default function FormularioAlojamiento({ abierto, alojamiento, guardando,
           <FormControl required>
             <InputLabel>Categoría</InputLabel>
             <Select label="Categoría *" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-              {CATEGORIAS_FORMULARIO.map((clave) => (
-                <MenuItem key={clave} value={clave}>
-                  {obtenerMetaCategoria(clave).nombre}
+              {opcionesCategoria.map((opcion) => (
+                <MenuItem key={opcion.clave} value={opcion.clave}>
+                  {opcion.nombre}
                 </MenuItem>
               ))}
             </Select>

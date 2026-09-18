@@ -1,5 +1,6 @@
 import { Email, LocationOn, Phone } from '@mui/icons-material';
 import { Box, Container, Divider, Typography } from '@mui/material';
+import { GUIA_ACTIVA } from '../guia.js';
 
 // Pie de página con marca y datos de contacto
 export default function Footer() {
@@ -17,7 +18,7 @@ export default function Footer() {
         >
           <Box sx={{ maxWidth: 420 }}>
             <Box component="img" src="/images/logo-blanco.svg" alt="Santa Rosa de Calamuchita" sx={{ height: 48, mb: 1.5 }} />
-            <Typography variant="body2">Guía de Alojamientos · Santa Rosa de Calamuchita</Typography>
+            <Typography variant="body2">{`${GUIA_ACTIVA.titulo} · Santa Rosa de Calamuchita`}</Typography>
             <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)', display: 'block', mt: 1 }}>
               Creado por Área de Prensa y Comunicación de la Municipalidad de Santa Rosa de Calamuchita
             </Typography>
@@ -27,13 +28,13 @@ export default function Footer() {
               Contacto
             </Typography>
             <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <Phone fontSize="small" sx={{ color: '#00adb7' }} /> +549 3546 52 8914
+              <Phone fontSize="small" sx={{ color: 'primary.main' }} /> +549 3546 52 8914
             </Typography>
             <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <Email fontSize="small" sx={{ color: '#00adb7' }} /> turismo@santarosacalamuchita.gob.ar
+              <Email fontSize="small" sx={{ color: 'primary.main' }} /> turismo@santarosacalamuchita.gob.ar
             </Typography>
             <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <LocationOn fontSize="small" sx={{ color: '#00adb7' }} /> Santa Rosa de Calamuchita, Córdoba
+              <LocationOn fontSize="small" sx={{ color: 'primary.main' }} /> Santa Rosa de Calamuchita, Córdoba
             </Typography>
           </Box>
         </Box>
