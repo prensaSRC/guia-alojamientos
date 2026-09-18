@@ -1,0 +1,18 @@
+# Netlify raíz: apunta el build al subdirectorio frontend/.
+# Si un sitio Netlify se crea desde este repo sin setear base directory,
+# estas líneas lo resuelven automáticamente (en lugar de romper el build
+# buscando package.json en la raíz).
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# Advertencia de nuances: el frontend también tiene su propio netlify.toml
+# (frontend/netlify.toml) que es usado cuando el build corre desde frontend/.
+# Este toml en la raíz es un atajo para cuando Netlify importa el repo completo.
+
+# SPA: cualquier ruta no matcheada por un archivo real se resuelve a index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
