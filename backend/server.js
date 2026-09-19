@@ -14,10 +14,13 @@ const app = express();
 // Middlewares globales
 // CORS: por defecto acepta cualquier origen; si FRONTEND_URL está definida
 // (producción) solo acepta peticiones desde ese dominio.
-const FRONTEND_URL = process.env.FRONTEND_URL || "";
+const FRONTEND_URLS = (process.env.FRONTEND_URL || "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 app.use(
   cors({
-    origin: FRONTEND_URL ? [FRONTEND_URL] : true,
+    origin: FRONTEND_URLS.length ? FRONTEND_URLS : true,
     credentials: true
   }),
 );
