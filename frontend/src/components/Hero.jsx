@@ -10,7 +10,7 @@ export default function Hero({ onBuscar }) {
   return (
     <Box
       sx={{
-        backgroundImage: `linear-gradient(135deg, ${GUIA_ACTIVA.color.main} 0%, ${GUIA_ACTIVA.color.dark} 100%), url("${imagen}")`,
+        backgroundImage: `linear-gradient(135deg, ${GUIA_ACTIVA.color.main} 0%, ${GUIA_ACTIVA.color.medio} 100%), url("${imagen}")`,
         backgroundBlendMode: 'multiply',
         backgroundSize: 'cover, cover',
         backgroundPosition: 'center 22%',
