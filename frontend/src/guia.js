@@ -39,7 +39,7 @@ export const GUIAS = {
       prefijo: 'la Guía de Alojamientos de Santa Rosa de Calamuchita',
       accion: 'consultar disponibilidad en',
     },
-    color: { main: '#00adb7', dark: '#008a92', light: '#b3eef0' },
+    color: { main: '#00adb7', dark: '#008a92', medio: '#009ca6', light: '#b3eef0' },
     categorias: {
       META: {
         hotel: { nombre: 'Hoteles', icono: Hotel, color: '#00adb7' },
