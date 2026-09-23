@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Alert, AppBar, Box, Button, Chip, CircularProgress, Divider, InputAdornment, Paper, Stack, TextField, Toolbar, Typography } from '@mui/material';
-import { Add, Apartment, Home as HomeIcon, Language, Logout, Person, Search, Storefront, WhatsApp } from '@mui/icons-material';
+import { Add, Apartment, Home as HomeIcon, Language, Logout, Person, Search, Storefront, WhatsApp, Download } from '@mui/icons-material';
 import { useAuth } from '../context/AuthContext.jsx';
 import { actualizarAlojamientoApi, crearAlojamientoApi, eliminarAlojamientoApi, obtenerAlojamientos } from '../api/client.js';
 import { normalizar } from '../utils/normalizar.js';
@@ -68,6 +68,40 @@ export default function Admin() {
 
   const [eliminandoA, setEliminandoA] = useState(null);
   const [eliminando, setEliminando] = useState(false);
+
+  const [descargando, setDescargando] = useState(false);
+
+  const descargarBackup = async () => {
+    setDescargando(true);
+    setError(null);
+    try {
+      // Obtener datos de ambos rubros en paralelo
+      const [alojamientosData, gastronomiaData] = await Promise.all([
+        obtenerAlojamientos('alojamientos'),
+        obtenerAlojamientos('gastronomia'),
+      ]);
+
+      const backup = {
+        fecha: new Date().toISOString(),
+        alojamientos: alojamientosData,
+        gastronomia: gastronomiaData,
+      };
+
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `backup-guia-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      setError(err.message || 'No se pudo generar el backup');
+    } finally {
+      setDescargando(false);
+    }
+  };
 
   useEffect(() => {
     let activo = true;
@@ -208,6 +242,9 @@ export default function Admin() {
             <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
               Ver sitio
             </Box>
+          </Button>
+          <Button startIcon={<Download />} onClick={descargarBackup} disabled={descargando} color="inherit" aria-label="Descargar backup de datos">
+            {descargando ? 'Generando...' : 'Descargar backup'}
           </Button>
           <Button startIcon={<Logout />} onClick={cerrarSesion} color="inherit">
             Salir
