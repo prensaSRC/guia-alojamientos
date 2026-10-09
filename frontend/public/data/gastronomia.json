@@ -1,0 +1,1596 @@
+[
+  {
+    "id": 18,
+    "nombre": "CASA GOMEZ BODEGÓN",
+    "categoria": "restaurante",
+    "direccion": "Av. José María Gómez 607",
+    "telefono": "(03546) 15458786",
+    "telefonos": [
+      {
+        "e164": "+5493546458786",
+        "tipo": "celular",
+        "numero": "(03546) 15458786",
+        "whatsapp": "5493546458786"
+      }
+    ],
+    "web": "https://www.instagram.com/casagomezbodegon/",
+    "createdAt": "2026-09-22T12:35:53.000Z",
+    "updatedAt": "2026-09-22T12:35:53.000Z"
+  },
+  {
+    "id": 19,
+    "nombre": "GABY",
+    "categoria": "heladería",
+    "direccion": "Libertad 139",
+    "telefono": "(03546) 15450757",
+    "telefonos": [
+      {
+        "e164": "+5493546450757",
+        "tipo": "celular",
+        "numero": "(03546) 15450757",
+        "whatsapp": "5493546450757"
+      }
+    ],
+    "web": "https://www.instagram.com/gaby_helados/?hl=es",
+    "createdAt": "2026-09-22T12:50:45.000Z",
+    "updatedAt": "2026-09-22T12:50:45.000Z"
+  },
+  {
+    "id": 20,
+    "nombre": "GRIDO",
+    "categoria": "heladería",
+    "direccion": "Libertad 81",
+    "telefono": "(0351) 155695302",
+    "telefonos": [
+      {
+        "e164": "+5493515695302",
+        "tipo": "celular",
+        "numero": "(0351) 155695302",
+        "whatsapp": "5493515695302"
+      }
+    ],
+    "web": "https://argentina.gridohelado.com/",
+    "createdAt": "2026-09-22T12:57:22.000Z",
+    "updatedAt": "2026-09-22T12:57:22.000Z"
+  },
+  {
+    "id": 21,
+    "nombre": "CATARINA",
+    "categoria": "restaurante",
+    "direccion": "Brasil esq. Nicaragua",
+    "telefono": "(03546) 15651929",
+    "telefonos": [
+      {
+        "e164": "+5493546651929",
+        "tipo": "celular",
+        "numero": "(03546) 15651929",
+        "whatsapp": "5493546651929"
+      }
+    ],
+    "web": "https://www.instagram.com/catarina_santarosa/?hl=es",
+    "createdAt": "2026-09-22T13:04:55.000Z",
+    "updatedAt": "2026-09-22T13:04:55.000Z"
+  },
+  {
+    "id": 22,
+    "nombre": "CIMA CASA GASTRONÓMICA",
+    "categoria": "restaurante",
+    "direccion": "Arturo Illia y Carlos Pellegrini",
+    "telefono": "(03546) 15490351",
+    "telefonos": [
+      {
+        "e164": "+5493546490351",
+        "tipo": "celular",
+        "numero": "(03546) 15490351",
+        "whatsapp": "5493546490351"
+      }
+    ],
+    "web": "https://www.instagram.com/cima.casagastronomica/?hl=es-la",
+    "createdAt": "2026-09-22T13:08:26.000Z",
+    "updatedAt": "2026-09-22T13:08:26.000Z"
+  },
+  {
+    "id": 23,
+    "nombre": "DOMENICO",
+    "categoria": "restaurante",
+    "direccion": "Av. Río Suquía esq. Río Grande",
+    "telefono": "(03546) 15418488",
+    "telefonos": [
+      {
+        "e164": "+5493546418488",
+        "tipo": "celular",
+        "numero": "(03546) 15418488",
+        "whatsapp": "5493546418488"
+      }
+    ],
+    "web": "https://www.instagram.com/domenicorestaurante/",
+    "createdAt": "2026-09-22T13:10:35.000Z",
+    "updatedAt": "2026-09-22T13:10:35.000Z"
+  },
+  {
+    "id": 24,
+    "nombre": "EL CHAÑAR",
+    "categoria": "restaurante",
+    "direccion": "RP 228 esq Vicente Nievas",
+    "telefono": "(03546) 15452787",
+    "telefonos": [
+      {
+        "e164": "+5493546452787",
+        "tipo": "celular",
+        "numero": "(03546) 15452787",
+        "whatsapp": "5493546452787"
+      }
+    ],
+    "web": "https://www.instagram.com/elchanarresto/?hl=es-la",
+    "createdAt": "2026-09-22T13:12:54.000Z",
+    "updatedAt": "2026-09-22T13:12:54.000Z"
+  },
+  {
+    "id": 25,
+    "nombre": "EL PARRAL",
+    "categoria": "restaurante",
+    "direccion": "Mendoza 131",
+    "telefono": "(03571) 15618359",
+    "telefonos": [
+      {
+        "e164": "+5493571618359",
+        "tipo": "celular",
+        "numero": "(03571) 15618359",
+        "whatsapp": "5493571618359"
+      }
+    ],
+    "web": "https://www.instagram.com/elparral.restaurant/",
+    "createdAt": "2026-09-22T13:17:17.000Z",
+    "updatedAt": "2026-09-22T13:17:17.000Z"
+  },
+  {
+    "id": 26,
+    "nombre": "KOPITOS",
+    "categoria": "heladería",
+    "direccion": "Libertad 217",
+    "telefono": "(03546) 15407109",
+    "telefonos": [
+      {
+        "e164": "+5493546407109",
+        "tipo": "celular",
+        "numero": "(03546) 15407109",
+        "whatsapp": "5493546407109"
+      }
+    ],
+    "web": "https://www.instagram.com/heladeria_kopitos/?hl=es",
+    "createdAt": "2026-09-22T13:25:16.000Z",
+    "updatedAt": "2026-09-22T13:25:16.000Z"
+  },
+  {
+    "id": 27,
+    "nombre": "LA 5 PARRILLA",
+    "categoria": "restaurante",
+    "direccion": "25 de Mayo 463 esq. Rivadavía",
+    "telefono": "(03546) 15452585",
+    "telefonos": [
+      {
+        "e164": "+5493546452585",
+        "tipo": "celular",
+        "numero": "(03546) 15452585",
+        "whatsapp": "5493546452585"
+      }
+    ],
+    "web": "https://www.instagram.com/parrilla.la5/",
+    "createdAt": "2026-09-22T13:32:27.000Z",
+    "updatedAt": "2026-09-22T13:32:27.000Z"
+  },
+  {
+    "id": 28,
+    "nombre": "GLUPS",
+    "categoria": "heladería",
+    "direccion": "Mendoza 13",
+    "telefono": "(03546) 155542881",
+    "telefonos": [
+      {
+        "e164": "+54935465542881",
+        "tipo": "celular",
+        "numero": "(03546) 155542881",
+        "whatsapp": "54935465542881"
+      }
+    ],
+    "web": "https://linktr.ee/glupssantarosa",
+    "createdAt": "2026-09-22T13:33:55.000Z",
+    "updatedAt": "2026-09-22T13:33:55.000Z"
+  },
+  {
+    "id": 29,
+    "nombre": "LA PULPERIA DE LOS FERREYRA",
+    "categoria": "restaurante",
+    "direccion": "Libertad 578",
+    "telefono": "(03546) 15546466",
+    "telefonos": [
+      {
+        "e164": "+5493546546466",
+        "tipo": "celular",
+        "numero": "(03546) 15546466",
+        "whatsapp": "5493546546466"
+      }
+    ],
+    "web": "https://www.instagram.com/lapulperiadelosferreyra/?hl=es-la",
+    "createdAt": "2026-09-22T13:37:53.000Z",
+    "updatedAt": "2026-09-22T13:37:53.000Z"
+  },
+  {
+    "id": 30,
+    "nombre": "LA ESQUINA DE LOS GUANACOS",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 97",
+    "telefono": "(03546) 15458333",
+    "telefonos": [
+      {
+        "e164": "+5493546458333",
+        "tipo": "celular",
+        "numero": "(03546) 15458333",
+        "whatsapp": "5493546458333"
+      }
+    ],
+    "web": "https://www.instagram.com/la.esquinadelosguanacos/",
+    "createdAt": "2026-09-22T13:37:58.000Z",
+    "updatedAt": "2026-09-22T13:37:58.000Z"
+  },
+  {
+    "id": 31,
+    "nombre": "BARRILÍN",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 101",
+    "telefono": "(03546) 15546476",
+    "telefonos": [
+      {
+        "e164": "+5493546546476",
+        "tipo": "celular",
+        "numero": "(03546) 15546476",
+        "whatsapp": "5493546546476"
+      }
+    ],
+    "web": "https://www.alfajoresbarrilin.com.ar/",
+    "createdAt": "2026-09-22T13:40:05.000Z",
+    "updatedAt": "2026-09-22T13:40:47.000Z"
+  },
+  {
+    "id": 32,
+    "nombre": "GRAN SOL",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 218",
+    "telefono": "(03546) 15651389",
+    "telefonos": [
+      {
+        "e164": "+5493546651389",
+        "tipo": "celular",
+        "numero": "(03546) 15651389",
+        "whatsapp": "5493546651389"
+      }
+    ],
+    "web": "https://www.instagram.com/alfajoresgransol/",
+    "createdAt": "2026-09-22T13:46:13.000Z",
+    "updatedAt": "2026-09-22T13:46:13.000Z"
+  },
+  {
+    "id": 33,
+    "nombre": "LA TRANQUERA",
+    "categoria": "restaurante",
+    "direccion": "Córdoba 451",
+    "telefono": "(03546) 15521306",
+    "telefonos": [
+      {
+        "e164": "+5493546521306",
+        "tipo": "celular",
+        "numero": "(03546) 15521306",
+        "whatsapp": "5493546521306"
+      }
+    ],
+    "web": "https://www.instagram.com/parrilatranquera/",
+    "createdAt": "2026-09-22T13:48:42.000Z",
+    "updatedAt": "2026-09-22T13:48:42.000Z"
+  },
+  {
+    "id": 34,
+    "nombre": "LA VAQUITA",
+    "categoria": "restaurante",
+    "direccion": "RP 228 esq. Juan de Dios Filiberto",
+    "telefono": "(0351) 152401509",
+    "telefonos": [
+      {
+        "e164": "+5493512401509",
+        "tipo": "celular",
+        "numero": "(0351) 152401509",
+        "whatsapp": "5493512401509"
+      }
+    ],
+    "web": "https://www.instagram.com/lavaquitadesantamonica/?hl=es",
+    "createdAt": "2026-09-22T13:53:16.000Z",
+    "updatedAt": "2026-09-22T13:53:16.000Z"
+  },
+  {
+    "id": 35,
+    "nombre": "LOS PINOS",
+    "categoria": "restaurante",
+    "direccion": "Mendoza 159",
+    "telefono": "(03546) 15515493",
+    "telefonos": [
+      {
+        "e164": "+5493546515493",
+        "tipo": "celular",
+        "numero": "(03546) 15515493",
+        "whatsapp": "5493546515493"
+      }
+    ],
+    "web": "https://www.instagram.com/lospinos.sr/",
+    "createdAt": "2026-09-22T13:56:12.000Z",
+    "updatedAt": "2026-09-22T13:56:12.000Z"
+  },
+  {
+    "id": 36,
+    "nombre": "BOCANA",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 120",
+    "telefono": "(03546) 15400654",
+    "telefonos": [
+      {
+        "e164": "+5493546400654",
+        "tipo": "celular",
+        "numero": "(03546) 15400654",
+        "whatsapp": "5493546400654"
+      }
+    ],
+    "web": "https://www.bocana.com.ar/locales",
+    "createdAt": "2026-09-22T13:57:03.000Z",
+    "updatedAt": "2026-09-22T13:57:03.000Z"
+  },
+  {
+    "id": 37,
+    "nombre": "LA QUINTA",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 244",
+    "telefono": "(03546) 15540110",
+    "telefonos": [
+      {
+        "e164": "+5493546540110",
+        "tipo": "celular",
+        "numero": "(03546) 15540110",
+        "whatsapp": "5493546540110"
+      }
+    ],
+    "web": "https://www.instagram.com/laquintasantarosa1/",
+    "createdAt": "2026-09-22T14:00:08.000Z",
+    "updatedAt": "2026-09-22T14:00:08.000Z"
+  },
+  {
+    "id": 38,
+    "nombre": "MARIA GUADALUPE",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 397",
+    "telefono": "(03546) 15523139",
+    "telefonos": [
+      {
+        "e164": "+5493546523139",
+        "tipo": "celular",
+        "numero": "(03546) 15523139",
+        "whatsapp": "5493546523139"
+      }
+    ],
+    "web": "https://www.instagram.com/panaderiamguadalupe/?hl=es",
+    "createdAt": "2026-09-22T14:02:36.000Z",
+    "updatedAt": "2026-09-22T14:02:36.000Z"
+  },
+  {
+    "id": 39,
+    "nombre": "LA CABAÑITA",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 121",
+    "telefono": "(03546) 15402122",
+    "telefonos": [
+      {
+        "e164": "+5493546402122",
+        "tipo": "celular",
+        "numero": "(03546) 15402122",
+        "whatsapp": "5493546402122"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T14:05:03.000Z",
+    "updatedAt": "2026-09-22T14:05:03.000Z"
+  },
+  {
+    "id": 40,
+    "nombre": "LOS SABORES DE LA NEGRA JUANA",
+    "categoria": "restaurante",
+    "direccion": "Av. Roberto Giagetto 1524",
+    "telefono": "(03546) 15477805",
+    "telefonos": [
+      {
+        "e164": "+5493546477805",
+        "tipo": "celular",
+        "numero": "(03546) 15477805",
+        "whatsapp": "5493546477805"
+      }
+    ],
+    "web": "https://www.instagram.com/lossaboresdelanegrajuana_?igsh=OWpmdXVuaDF5dGZo",
+    "createdAt": "2026-09-22T14:05:49.000Z",
+    "updatedAt": "2026-09-22T14:05:49.000Z"
+  },
+  {
+    "id": 41,
+    "nombre": "MAMPA (COMPLEJO COOVAECO)",
+    "categoria": "restaurante",
+    "direccion": "Av. De los Pájaros y Martín Pescador",
+    "telefono": "(03571) 15623271",
+    "telefonos": [
+      {
+        "e164": "+5493571623271",
+        "tipo": "celular",
+        "numero": "(03571) 15623271",
+        "whatsapp": "5493571623271"
+      }
+    ],
+    "web": "https://www.instagram.com/mampa_mampaeventos/",
+    "createdAt": "2026-09-22T14:08:30.000Z",
+    "updatedAt": "2026-09-22T14:08:30.000Z"
+  },
+  {
+    "id": 42,
+    "nombre": "ARTE GOURMET",
+    "categoria": "alfajores y delicias artesanales",
+    "direccion": "Libertad 273",
+    "telefono": "(03546) 15436960",
+    "telefonos": [
+      {
+        "e164": "+5493546436960",
+        "tipo": "celular",
+        "numero": "(03546) 15436960",
+        "whatsapp": "5493546436960"
+      }
+    ],
+    "web": "https://artegourmet.com.ar/",
+    "createdAt": "2026-09-22T14:14:30.000Z",
+    "updatedAt": "2026-09-22T14:14:30.000Z"
+  },
+  {
+    "id": 43,
+    "nombre": "MOE MOEEA",
+    "categoria": "restaurante",
+    "direccion": "Libertad esq. Mariano Moreno",
+    "telefono": "(03546) 15570046",
+    "telefonos": [
+      {
+        "e164": "+5493546570046",
+        "tipo": "celular",
+        "numero": "(03546) 15570046",
+        "whatsapp": "5493546570046"
+      }
+    ],
+    "web": "https://moemoeea.shop/",
+    "createdAt": "2026-09-22T14:16:58.000Z",
+    "updatedAt": "2026-09-22T14:16:58.000Z"
+  },
+  {
+    "id": 44,
+    "nombre": "NONNA BERTINA",
+    "categoria": "restaurante",
+    "direccion": "Entre Ríos 59",
+    "telefono": "(03571) 15591064",
+    "telefonos": [
+      {
+        "e164": "+5493571591064",
+        "tipo": "celular",
+        "numero": "(03571) 15591064",
+        "whatsapp": "5493571591064"
+      }
+    ],
+    "web": "https://www.instagram.com/nonna_bertina/?hl=es",
+    "createdAt": "2026-09-22T14:18:35.000Z",
+    "updatedAt": "2026-09-22T14:18:35.000Z"
+  },
+  {
+    "id": 45,
+    "nombre": "SALVATIERRA FRESCO Y NATURAL",
+    "categoria": "restaurante",
+    "direccion": "Bernardo Houssay y Don Goyo s/n",
+    "telefono": "(0351) 156361583",
+    "telefonos": [
+      {
+        "e164": "+5493516361583",
+        "tipo": "celular",
+        "numero": "(0351) 156361583",
+        "whatsapp": "5493516361583"
+      }
+    ],
+    "web": "https://www.instagram.com/salvatierra.frescoynatural?utm_medium=copy_link",
+    "createdAt": "2026-09-22T14:20:31.000Z",
+    "updatedAt": "2026-09-22T14:20:31.000Z"
+  },
+  {
+    "id": 46,
+    "nombre": "TODO PASTA",
+    "categoria": "restaurante",
+    "direccion": "Córdoba 235",
+    "telefono": "(03546) 15422151",
+    "telefonos": [
+      {
+        "e164": "+54354615422151",
+        "tipo": "fijo",
+        "numero": "(03546) 15422151"
+      }
+    ],
+    "web": "https://www.facebook.com/todopastas1/?locale=es_LA",
+    "createdAt": "2026-09-22T14:23:21.000Z",
+    "updatedAt": "2026-09-22T14:23:21.000Z"
+  },
+  {
+    "id": 47,
+    "nombre": "DAVINCI",
+    "categoria": "pizzería",
+    "direccion": "Libertad 149",
+    "telefono": "(03546) 420826",
+    "telefonos": [
+      {
+        "e164": "+543546420826",
+        "tipo": "fijo",
+        "numero": "(03546) 420826"
+      }
+    ],
+    "web": "https://www.facebook.com/p/Da-Vinci-Bar-Pizzeria-100069606215650",
+    "createdAt": "2026-09-22T14:23:31.000Z",
+    "updatedAt": "2026-09-22T14:23:31.000Z"
+  },
+  {
+    "id": 48,
+    "nombre": "EL GRINGO BATTAGLIA",
+    "categoria": "pizzería",
+    "direccion": "Libertad 262",
+    "telefono": "(03546) 15458126",
+    "telefonos": [
+      {
+        "e164": "+5493546458126",
+        "tipo": "celular",
+        "numero": "(03546) 15458126",
+        "whatsapp": "5493546458126"
+      }
+    ],
+    "web": "https://www.facebook.com/Elgringobattaglia/?locale=es_LA",
+    "createdAt": "2026-09-22T14:27:53.000Z",
+    "updatedAt": "2026-09-22T14:27:53.000Z"
+  },
+  {
+    "id": 49,
+    "nombre": "SAGITARIO",
+    "categoria": "restaurante",
+    "direccion": "Libertad 324",
+    "telefono": "(03546) 421406",
+    "telefonos": [
+      {
+        "e164": "+543546421406",
+        "tipo": "fijo",
+        "numero": "(03546) 421406"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T14:28:38.000Z",
+    "updatedAt": "2026-09-22T14:28:38.000Z"
+  },
+  {
+    "id": 50,
+    "nombre": "PIZZA 7",
+    "categoria": "pizzería",
+    "direccion": "Mendoza 130",
+    "telefono": "(03546) 421903",
+    "telefonos": [
+      {
+        "e164": "+543546421903",
+        "tipo": "fijo",
+        "numero": "(03546) 421903"
+      }
+    ],
+    "web": "https://www.facebook.com/Pizeriasiete/",
+    "createdAt": "2026-09-22T14:32:07.000Z",
+    "updatedAt": "2026-09-22T14:32:07.000Z"
+  },
+  {
+    "id": 51,
+    "nombre": "PIZZERÍA EL GRINGO",
+    "categoria": "pizzería",
+    "direccion": "Av. Int. R. Giagetto 1520",
+    "telefono": "(03546) 15436255",
+    "telefonos": [
+      {
+        "e164": "+54354615436255",
+        "tipo": "fijo",
+        "numero": "(03546) 15436255"
+      }
+    ],
+    "web": "https://www.instagram.com/pizzeriaelgringo_/",
+    "createdAt": "2026-09-22T14:36:34.000Z",
+    "updatedAt": "2026-09-22T14:36:34.000Z"
+  },
+  {
+    "id": 52,
+    "nombre": "BRACO BAR",
+    "categoria": "restobares",
+    "direccion": "Av. Fuerza Aérea esq. Roberto Giagetto",
+    "telefono": "(03546) 15404299",
+    "telefonos": [
+      {
+        "e164": "+5493546404299",
+        "tipo": "celular",
+        "numero": "(03546) 15404299",
+        "whatsapp": "5493546404299"
+      }
+    ],
+    "web": "https://www.instagram.com/bracobar/?hl=es",
+    "createdAt": "2026-09-22T14:41:08.000Z",
+    "updatedAt": "2026-09-22T14:41:08.000Z"
+  },
+  {
+    "id": 53,
+    "nombre": "WONDER  HAMBURGUESERIA",
+    "categoria": "pizzería",
+    "direccion": "Córdoba 59",
+    "telefono": "(03546) 15480319",
+    "telefonos": [
+      {
+        "e164": "+5493546480319",
+        "tipo": "celular",
+        "numero": "(03546) 15480319",
+        "whatsapp": "5493546480319"
+      }
+    ],
+    "web": "https://pedix.app/wonder-santarosa",
+    "createdAt": "2026-09-22T14:42:28.000Z",
+    "updatedAt": "2026-09-24T10:43:13.000Z"
+  },
+  {
+    "id": 54,
+    "nombre": "ARENAS DEL SHEIK",
+    "categoria": "restobares",
+    "direccion": "Libertad 37",
+    "telefono": "(03546) 15545582",
+    "telefonos": [
+      {
+        "e164": "+5493546545582",
+        "tipo": "celular",
+        "numero": "(03546) 15545582",
+        "whatsapp": "5493546545582"
+      }
+    ],
+    "web": "https://www.instagram.com/arenasdelsheik/?hl=es",
+    "createdAt": "2026-09-22T14:43:49.000Z",
+    "updatedAt": "2026-09-22T14:43:49.000Z"
+  },
+  {
+    "id": 55,
+    "nombre": "VASCO",
+    "categoria": "cafetería",
+    "direccion": "Córdoba 207",
+    "telefono": "(0351) 155728133",
+    "telefonos": [
+      {
+        "e164": "+5493515728133",
+        "tipo": "celular",
+        "numero": "(0351) 155728133",
+        "whatsapp": "5493515728133"
+      }
+    ],
+    "web": "https://www.instagram.com/vascocoffee_",
+    "createdAt": "2026-09-22T14:45:01.000Z",
+    "updatedAt": "2026-09-22T14:45:01.000Z"
+  },
+  {
+    "id": 56,
+    "nombre": "ARTE GOURMET",
+    "categoria": "cafetería",
+    "direccion": "Libertad 263",
+    "telefono": "(03546) 15421540",
+    "telefonos": [
+      {
+        "e164": "+5493546421540",
+        "tipo": "celular",
+        "numero": "(03546) 15421540",
+        "whatsapp": "5493546421540"
+      }
+    ],
+    "web": "https://artegourmet.com.ar/",
+    "createdAt": "2026-09-22T14:46:01.000Z",
+    "updatedAt": "2026-09-22T14:46:01.000Z"
+  },
+  {
+    "id": 57,
+    "nombre": "CUORE CAFÉ",
+    "categoria": "cafetería",
+    "direccion": "Libertad 539",
+    "telefono": "(03546) 15513843",
+    "telefonos": [
+      {
+        "e164": "+5493546513843",
+        "tipo": "celular",
+        "numero": "(03546) 15513843",
+        "whatsapp": "5493546513843"
+      }
+    ],
+    "web": "https://www.instagram.com/cuorecafeok/",
+    "createdAt": "2026-09-22T14:47:44.000Z",
+    "updatedAt": "2026-09-22T14:47:44.000Z"
+  },
+  {
+    "id": 58,
+    "nombre": "EL RELAJO",
+    "categoria": "cafetería",
+    "direccion": "RP228 536",
+    "telefono": "(03546) 15476602",
+    "telefonos": [
+      {
+        "e164": "+5493546476602",
+        "tipo": "celular",
+        "numero": "(03546) 15476602",
+        "whatsapp": "5493546476602"
+      }
+    ],
+    "web": "https://www.instagram.com/elrelajoresto/",
+    "createdAt": "2026-09-22T14:50:31.000Z",
+    "updatedAt": "2026-09-22T14:50:31.000Z"
+  },
+  {
+    "id": 59,
+    "nombre": "BAR 237",
+    "categoria": "restobares",
+    "direccion": "Libertad 237",
+    "telefono": "(03546) 15524627",
+    "telefonos": [
+      {
+        "e164": "+5493546524627",
+        "tipo": "celular",
+        "numero": "(03546) 15524627",
+        "whatsapp": "5493546524627"
+      }
+    ],
+    "web": "https://www.instagram.com/237cafebar/",
+    "createdAt": "2026-09-22T14:50:55.000Z",
+    "updatedAt": "2026-09-22T14:50:55.000Z"
+  },
+  {
+    "id": 60,
+    "nombre": "EL ESCONDITE",
+    "categoria": "restobares",
+    "direccion": "Calle 6 entre 1 Y 3",
+    "telefono": "(03546) 15408127",
+    "telefonos": [
+      {
+        "e164": "+5493546408127",
+        "tipo": "celular",
+        "numero": "(03546) 15408127",
+        "whatsapp": "5493546408127"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T14:54:25.000Z",
+    "updatedAt": "2026-09-22T14:54:25.000Z"
+  },
+  {
+    "id": 61,
+    "nombre": "EL MORO",
+    "categoria": "restobares",
+    "direccion": "AV. J Carcano Esq. Mariano Moreno",
+    "telefono": "(03546) 15431632",
+    "telefonos": [
+      {
+        "e164": "+5493546431632",
+        "tipo": "celular",
+        "numero": "(03546) 15431632",
+        "whatsapp": "5493546431632"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T15:00:42.000Z",
+    "updatedAt": "2026-09-22T15:00:42.000Z"
+  },
+  {
+    "id": 62,
+    "nombre": "EL SAUCE",
+    "categoria": "restaurante",
+    "direccion": "Av. Roberto Giagetto 771",
+    "telefono": "(03546) 15420026",
+    "telefonos": [
+      {
+        "e164": "+5493546420026",
+        "tipo": "celular",
+        "numero": "(03546) 15420026",
+        "whatsapp": "5493546420026"
+      }
+    ],
+    "web": "https://www.instagram.com/elsauce.hotel/",
+    "createdAt": "2026-09-22T15:05:42.000Z",
+    "updatedAt": "2026-09-22T15:05:42.000Z"
+  },
+  {
+    "id": 63,
+    "nombre": "FONTE",
+    "categoria": "restobares",
+    "direccion": "Libertad 232",
+    "telefono": "(03571) 15548038",
+    "telefonos": [
+      {
+        "e164": "+5493571548038",
+        "tipo": "celular",
+        "numero": "(03571) 15548038",
+        "whatsapp": "5493571548038"
+      }
+    ],
+    "web": "https://www.instagram.com/fonte.restobar/",
+    "createdAt": "2026-09-22T15:08:14.000Z",
+    "updatedAt": "2026-09-22T15:08:14.000Z"
+  },
+  {
+    "id": 64,
+    "nombre": "RINCONCITO DEL BALCON (CAFETERIA)",
+    "categoria": "cafetería",
+    "direccion": "Av. Juan Domingo Peron 150",
+    "telefono": "(03546) 15409205",
+    "telefonos": [
+      {
+        "e164": "+5493546409205",
+        "tipo": "celular",
+        "numero": "(03546) 15409205",
+        "whatsapp": "5493546409205"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T15:10:45.000Z",
+    "updatedAt": "2026-09-22T15:10:45.000Z"
+  },
+  {
+    "id": 65,
+    "nombre": "DIDAMO by Cakes&Co",
+    "categoria": "cafetería",
+    "direccion": "Independencia 267",
+    "telefono": "(03546) 15417875",
+    "telefonos": [
+      {
+        "e164": "+5493546417875",
+        "tipo": "celular",
+        "numero": "(03546) 15417875",
+        "whatsapp": "5493546417875"
+      }
+    ],
+    "web": "https://www.instagram.com/didamocafe/",
+    "createdAt": "2026-09-22T15:13:17.000Z",
+    "updatedAt": "2026-09-22T15:13:17.000Z"
+  },
+  {
+    "id": 66,
+    "nombre": "KAMAMA BOWLING",
+    "categoria": "restobares",
+    "direccion": "Guemes 74",
+    "telefono": "(03546) 15458083",
+    "telefonos": [
+      {
+        "e164": "+5493546458083",
+        "tipo": "celular",
+        "numero": "(03546) 15458083",
+        "whatsapp": "5493546458083"
+      }
+    ],
+    "web": "https://www.instagram.com/kamama.bowling/?hl=es",
+    "createdAt": "2026-09-22T15:23:06.000Z",
+    "updatedAt": "2026-09-22T15:23:06.000Z"
+  },
+  {
+    "id": 67,
+    "nombre": "LA CHIVA",
+    "categoria": "pizzería",
+    "direccion": "Mendoza 426",
+    "telefono": "(03546) 15415232",
+    "telefonos": [
+      {
+        "e164": "+5493546415232",
+        "tipo": "celular",
+        "numero": "(03546) 15415232",
+        "whatsapp": "5493546415232"
+      }
+    ],
+    "web": "https://www.instagram.com/lachiva_cafebar/",
+    "createdAt": "2026-09-22T15:25:38.000Z",
+    "updatedAt": "2026-09-22T15:25:38.000Z"
+  },
+  {
+    "id": 68,
+    "nombre": "EL PARRIPOLLO DE AL LADO",
+    "categoria": "comidas para llevar",
+    "direccion": "Hipólito Yrigoyen 181",
+    "telefono": "(03546) 15546585",
+    "telefonos": [
+      {
+        "e164": "+5493546546585",
+        "tipo": "celular",
+        "numero": "(03546) 15546585",
+        "whatsapp": "5493546546585"
+      }
+    ],
+    "web": "https://www.facebook.com/p/El-parripollo-de-al-lado-100027880076652/",
+    "createdAt": "2026-09-22T15:26:22.000Z",
+    "updatedAt": "2026-09-22T15:26:22.000Z"
+  },
+  {
+    "id": 69,
+    "nombre": "LA ESTACION",
+    "categoria": "restobares",
+    "direccion": "Libertad 699",
+    "telefono": "(03546) 15435117",
+    "telefonos": [
+      {
+        "e164": "+5493546435117",
+        "tipo": "celular",
+        "numero": "(03546) 15435117",
+        "whatsapp": "5493546435117"
+      }
+    ],
+    "web": "https://www.instagram.com/laestacionsantarosa/",
+    "createdAt": "2026-09-22T15:27:50.000Z",
+    "updatedAt": "2026-09-22T15:27:50.000Z"
+  },
+  {
+    "id": 70,
+    "nombre": "ALELIS",
+    "categoria": "comidas para llevar",
+    "direccion": "Malvinas Argentinas 242",
+    "telefono": "(03546) 15438912",
+    "telefonos": [
+      {
+        "e164": "+5493546438912",
+        "tipo": "celular",
+        "numero": "(03546) 15438912",
+        "whatsapp": "5493546438912"
+      }
+    ],
+    "web": "https://www.instagram.com/alelis.rotiseria/",
+    "createdAt": "2026-09-22T15:29:35.000Z",
+    "updatedAt": "2026-09-22T15:29:35.000Z"
+  },
+  {
+    "id": 71,
+    "nombre": "LA PAUSA",
+    "categoria": "restobares",
+    "direccion": "Av. Angel Llanos s/n (Terminal)",
+    "telefono": "(03546) 15452123",
+    "telefonos": [
+      {
+        "e164": "+5493546452123",
+        "tipo": "celular",
+        "numero": "(03546) 15452123",
+        "whatsapp": "5493546452123"
+      }
+    ],
+    "web": "https://www.facebook.com/p/La-Pausa-100063692030300/",
+    "createdAt": "2026-09-22T15:32:06.000Z",
+    "updatedAt": "2026-09-22T15:32:06.000Z"
+  },
+  {
+    "id": 72,
+    "nombre": "BODEGON DE PIZZAS",
+    "categoria": "comidas para llevar",
+    "direccion": "Independencia 107",
+    "telefono": "(0351) 157402209",
+    "telefonos": [
+      {
+        "e164": "+5493517402209",
+        "tipo": "celular",
+        "numero": "(0351) 157402209",
+        "whatsapp": "5493517402209"
+      }
+    ],
+    "web": "https://www.instagram.com/bodegondepizzassrc/",
+    "createdAt": "2026-09-22T15:33:10.000Z",
+    "updatedAt": "2026-09-22T15:33:10.000Z"
+  },
+  {
+    "id": 73,
+    "nombre": "LA VACA",
+    "categoria": "restobares",
+    "direccion": "Libertad 165",
+    "telefono": "(03546) 15405534",
+    "telefonos": [
+      {
+        "e164": "+5493546405534",
+        "tipo": "celular",
+        "numero": "(03546) 15405534",
+        "whatsapp": "5493546405534"
+      }
+    ],
+    "web": "https://www.instagram.com/lavaca.santarosa/?hl=es",
+    "createdAt": "2026-09-22T15:34:37.000Z",
+    "updatedAt": "2026-09-22T15:34:37.000Z"
+  },
+  {
+    "id": 74,
+    "nombre": "NUOVO CAFÉ",
+    "categoria": "restobares",
+    "direccion": "Libertad 323",
+    "telefono": "(03546) 15409170",
+    "telefonos": [
+      {
+        "e164": "+5493546409170",
+        "tipo": "celular",
+        "numero": "(03546) 15409170",
+        "whatsapp": "5493546409170"
+      }
+    ],
+    "web": "https://www.instagram.com/somosnuovocaffe/?hl=es",
+    "createdAt": "2026-09-22T15:36:50.000Z",
+    "updatedAt": "2026-09-22T15:36:50.000Z"
+  },
+  {
+    "id": 75,
+    "nombre": "BUONGIORNO",
+    "categoria": "restaurante",
+    "direccion": "Ruta 5 km 93,5",
+    "telefono": "(03546) 15543983",
+    "telefonos": [
+      {
+        "e164": "+5493546543983",
+        "tipo": "celular",
+        "numero": "(03546) 15543983",
+        "whatsapp": "5493546543983"
+      }
+    ],
+    "web": "https://complejovalledelsol.com/gastronomia/",
+    "createdAt": "2026-09-22T15:37:20.000Z",
+    "updatedAt": "2026-09-22T15:37:20.000Z"
+  },
+  {
+    "id": 76,
+    "nombre": "OHANNA",
+    "categoria": "restobares",
+    "direccion": "Av intendente Giagetto 913",
+    "telefono": "(03546) 15659333",
+    "telefonos": [
+      {
+        "e164": "+5493546659333",
+        "tipo": "celular",
+        "numero": "(03546) 15659333",
+        "whatsapp": "5493546659333"
+      }
+    ],
+    "web": "https://www.instagram.com/ohanna.resto/?hl=es",
+    "createdAt": "2026-09-22T15:38:46.000Z",
+    "updatedAt": "2026-09-22T15:38:46.000Z"
+  },
+  {
+    "id": 77,
+    "nombre": "PURA MAGIA",
+    "categoria": "restobares",
+    "direccion": "Los Horneros 731",
+    "telefono": "(03546) 15477248",
+    "telefonos": [
+      {
+        "e164": "+5493546477248",
+        "tipo": "celular",
+        "numero": "(03546) 15477248",
+        "whatsapp": "5493546477248"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T15:43:31.000Z",
+    "updatedAt": "2026-09-22T15:43:31.000Z"
+  },
+  {
+    "id": 78,
+    "nombre": "EL BUEN SABOR",
+    "categoria": "comidas para llevar",
+    "direccion": "RP 228 (Paseo Cortázar). Santa Mónica",
+    "telefono": "(03546) 15438737",
+    "telefonos": [
+      {
+        "e164": "+5493546438737",
+        "tipo": "celular",
+        "numero": "(03546) 15438737",
+        "whatsapp": "5493546438737"
+      }
+    ],
+    "web": "https://www.instagram.com/rotibuensabor._?igsh=MWt5aWVoY2U2cnM5MA%3D%3D&utm_source=qr",
+    "createdAt": "2026-09-22T15:43:43.000Z",
+    "updatedAt": "2026-09-22T15:43:43.000Z"
+  },
+  {
+    "id": 79,
+    "nombre": "EL TURCO",
+    "categoria": "comidas para llevar",
+    "direccion": "España 411",
+    "telefono": "(03546) 15488928",
+    "telefonos": [
+      {
+        "e164": "+5493546488928",
+        "tipo": "celular",
+        "numero": "(03546) 15488928",
+        "whatsapp": "5493546488928"
+      }
+    ],
+    "web": "https://www.instagram.com/elturco.roti/?hl=es-la",
+    "createdAt": "2026-09-22T15:46:36.000Z",
+    "updatedAt": "2026-09-22T15:46:36.000Z"
+  },
+  {
+    "id": 80,
+    "nombre": "PATIO SHEIK",
+    "categoria": "restobares",
+    "direccion": "Mendoza esq. Cerro de Oro",
+    "telefono": "(03546) 15477371",
+    "telefonos": [
+      {
+        "e164": "+5493546477371",
+        "tipo": "celular",
+        "numero": "(03546) 15477371",
+        "whatsapp": "5493546477371"
+      }
+    ],
+    "web": "https://www.instagram.com/sheik.oficial/?hl=es",
+    "createdAt": "2026-09-22T16:02:05.000Z",
+    "updatedAt": "2026-09-22T16:02:05.000Z"
+  },
+  {
+    "id": 81,
+    "nombre": "EL RELAJO",
+    "categoria": "restobares",
+    "direccion": "Los Horneros 256",
+    "telefono": "(03546) 15407540",
+    "telefonos": [
+      {
+        "e164": "+5493546407540",
+        "tipo": "celular",
+        "numero": "(03546) 15407540",
+        "whatsapp": "5493546407540"
+      }
+    ],
+    "web": "https://www.instagram.com/elrelajobar/",
+    "createdAt": "2026-09-22T16:10:41.000Z",
+    "updatedAt": "2026-09-22T16:10:41.000Z"
+  },
+  {
+    "id": 82,
+    "nombre": "JUNIO SABORES CASEROS (empanadas artesanales)",
+    "categoria": "comidas para llevar",
+    "direccion": "Libertad 100",
+    "telefono": "(03546) 15560747",
+    "telefonos": [
+      {
+        "e164": "+5493546560747",
+        "tipo": "celular",
+        "numero": "(03546) 15560747",
+        "whatsapp": "5493546560747"
+      }
+    ],
+    "web": "https://www.instagram.com/juniosaborescaseros",
+    "createdAt": "2026-09-22T16:12:14.000Z",
+    "updatedAt": "2026-09-22T16:12:14.000Z"
+  },
+  {
+    "id": 83,
+    "nombre": "LA COCINA DEL TIO",
+    "categoria": "comidas para llevar",
+    "direccion": "Malvinas Argentinas esq. Mendoza",
+    "telefono": "(03546) 422222",
+    "telefonos": [
+      {
+        "e164": "+543546422222",
+        "tipo": "fijo",
+        "numero": "(03546) 422222"
+      }
+    ],
+    "web": "https://www.facebook.com/p/La-Cocina-del-Tio-Braseria-61551685204764/?locale=es_LA",
+    "createdAt": "2026-09-22T16:15:22.000Z",
+    "updatedAt": "2026-09-22T16:15:22.000Z"
+  },
+  {
+    "id": 84,
+    "nombre": "VENECIA",
+    "categoria": "restobares",
+    "direccion": "Libertad esq. El Nogal",
+    "telefono": "(03546) 15435895",
+    "telefonos": [
+      {
+        "e164": "+5493546435895",
+        "tipo": "celular",
+        "numero": "(03546) 15435895",
+        "whatsapp": "5493546435895"
+      }
+    ],
+    "web": "https://www.facebook.com/venecia.restobar.9/",
+    "createdAt": "2026-09-22T16:15:23.000Z",
+    "updatedAt": "2026-09-22T16:15:23.000Z"
+  },
+  {
+    "id": 85,
+    "nombre": "EL AGUILA",
+    "categoria": "restobares",
+    "direccion": "Ruta 5 km 90,5",
+    "telefono": "(0351) 153960579",
+    "telefonos": [
+      {
+        "e164": "+5493513960579",
+        "tipo": "celular",
+        "numero": "(0351) 153960579",
+        "whatsapp": "5493513960579"
+      }
+    ],
+    "web": "https://www.instagram.com/elaguila_restobar",
+    "createdAt": "2026-09-22T16:16:59.000Z",
+    "updatedAt": "2026-09-22T16:16:59.000Z"
+  },
+  {
+    "id": 86,
+    "nombre": "LA CRIOLLA",
+    "categoria": "comidas para llevar",
+    "direccion": "Córdoba 380",
+    "telefono": "(03546) 422906",
+    "telefonos": [
+      {
+        "e164": "+543546422906",
+        "tipo": "fijo",
+        "numero": "(03546) 422906"
+      }
+    ],
+    "web": "https://www.facebook.com/lacriolla.empanadascaseras?__nodl",
+    "createdAt": "2026-09-22T16:18:02.000Z",
+    "updatedAt": "2026-09-22T16:18:02.000Z"
+  },
+  {
+    "id": 87,
+    "nombre": "ALQUIMIA",
+    "categoria": "restobares",
+    "direccion": "Mendoza 121",
+    "telefono": "(03546) 15431761",
+    "telefonos": [
+      {
+        "e164": "+5493546431761",
+        "tipo": "celular",
+        "numero": "(03546) 15431761",
+        "whatsapp": "5493546431761"
+      }
+    ],
+    "web": "https://www.instagram.com/alquimia_santarosa/",
+    "createdAt": "2026-09-22T16:18:49.000Z",
+    "updatedAt": "2026-09-22T16:18:49.000Z"
+  },
+  {
+    "id": 88,
+    "nombre": "ATRACO",
+    "categoria": "restobares",
+    "direccion": "Libertad 46",
+    "telefono": "(03546) 15523867",
+    "telefonos": [
+      {
+        "e164": "+5493546523867",
+        "tipo": "celular",
+        "numero": "(03546) 15523867",
+        "whatsapp": "5493546523867"
+      }
+    ],
+    "web": "https://www.instagram.com/atraco.restobar/",
+    "createdAt": "2026-09-22T16:20:22.000Z",
+    "updatedAt": "2026-09-22T16:20:22.000Z"
+  },
+  {
+    "id": 89,
+    "nombre": "LA DOMINGA",
+    "categoria": "comidas para llevar",
+    "direccion": "Independencia 87",
+    "telefono": "(03546) 15455316",
+    "telefonos": [
+      {
+        "e164": "+5493546455316",
+        "tipo": "celular",
+        "numero": "(03546) 15455316",
+        "whatsapp": "5493546455316"
+      }
+    ],
+    "web": "https://www.facebook.com/app.calamuchitaya/posts/sandwicheria-la-dominga-en-santa-rosa-fabrica-de-s%C3%A1ndwich-de-miga-m%C3%A1s-de-25-vari/144164847312380/",
+    "createdAt": "2026-09-22T16:21:31.000Z",
+    "updatedAt": "2026-09-22T16:21:31.000Z"
+  },
+  {
+    "id": 90,
+    "nombre": "LA PARRILLA DE PORTIC",
+    "categoria": "comidas para llevar",
+    "direccion": "Cerro de Oro esq. Champaqui",
+    "telefono": "(03546) 1559369",
+    "telefonos": [
+      {
+        "e164": "+549354659369",
+        "tipo": "celular",
+        "numero": "(03546) 1559369",
+        "whatsapp": "549354659369"
+      }
+    ],
+    "web": "https://www.instagram.com/laparrideportic.santarosa/",
+    "createdAt": "2026-09-22T16:26:23.000Z",
+    "updatedAt": "2026-09-22T16:26:23.000Z"
+  },
+  {
+    "id": 91,
+    "nombre": "LA ROTISERIA",
+    "categoria": "comidas para llevar",
+    "direccion": "Camino de los 7 Colores 28",
+    "telefono": "(03546) 15408493",
+    "telefonos": [
+      {
+        "e164": "+5493546408493",
+        "tipo": "celular",
+        "numero": "(03546) 15408493",
+        "whatsapp": "5493546408493"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T16:29:46.000Z",
+    "updatedAt": "2026-09-22T16:29:46.000Z"
+  },
+  {
+    "id": 92,
+    "nombre": "LO DE JACINTO",
+    "categoria": "comidas para llevar",
+    "direccion": "Córdoba 207",
+    "telefono": "(03546) 15536819",
+    "telefonos": [
+      {
+        "e164": "+5493546536819",
+        "tipo": "celular",
+        "numero": "(03546) 15536819",
+        "whatsapp": "5493546536819"
+      }
+    ],
+    "web": "https://www.instagram.com/lodejacintosantarosa/?hl=es",
+    "createdAt": "2026-09-22T16:32:36.000Z",
+    "updatedAt": "2026-09-22T16:32:36.000Z"
+  },
+  {
+    "id": 93,
+    "nombre": "EL HORNITO SANTIAGUEÑO",
+    "categoria": "comidas para llevar",
+    "direccion": "Av. De los 7 colores esq. Av. Los Pajaros",
+    "telefono": "(03546) 420268",
+    "telefonos": [
+      {
+        "e164": "+543546420268",
+        "tipo": "fijo",
+        "numero": "(03546) 420268"
+      }
+    ],
+    "web": "https://www.facebook.com/p/El-Hornito-Santa-Rosa-de-Calamuchita-100063092148751/",
+    "createdAt": "2026-09-22T16:33:04.000Z",
+    "updatedAt": "2026-09-22T16:33:04.000Z"
+  },
+  {
+    "id": 94,
+    "nombre": "SAMUR EMPANADAS",
+    "categoria": "comidas para llevar",
+    "direccion": "Córdoba 11",
+    "telefono": "(03546) 15502775",
+    "telefonos": [
+      {
+        "e164": "+5493546502775",
+        "tipo": "celular",
+        "numero": "(03546) 15502775",
+        "whatsapp": "5493546502775"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T16:43:45.000Z",
+    "updatedAt": "2026-09-22T16:43:45.000Z"
+  },
+  {
+    "id": 95,
+    "nombre": "LOLITA PIZZAS Y EMPANADAS",
+    "categoria": "comidas para llevar",
+    "direccion": "Malvinas Argentinas 350",
+    "telefono": "(03546) 15404200",
+    "telefonos": [
+      {
+        "e164": "+5493546404200",
+        "tipo": "celular",
+        "numero": "(03546) 15404200",
+        "whatsapp": "5493546404200"
+      }
+    ],
+    "web": null,
+    "createdAt": "2026-09-22T16:45:04.000Z",
+    "updatedAt": "2026-09-22T16:45:04.000Z"
+  },
+  {
+    "id": 96,
+    "nombre": "LUMITO",
+    "categoria": "comidas para llevar",
+    "direccion": "Calle 5 entre 22 y 24",
+    "telefono": "(03546) 15454288",
+    "telefonos": [
+      {
+        "e164": "+5493546454288",
+        "tipo": "celular",
+        "numero": "(03546) 15454288",
+        "whatsapp": "5493546454288"
+      }
+    ],
+    "web": "https://www.instagram.com/lumito.ok/",
+    "createdAt": "2026-09-22T16:49:28.000Z",
+    "updatedAt": "2026-09-22T16:49:28.000Z"
+  },
+  {
+    "id": 97,
+    "nombre": "PACHOS SANTO",
+    "categoria": "comidas para llevar",
+    "direccion": "Mendoza 77",
+    "telefono": "(03546) 15415591",
+    "telefonos": [
+      {
+        "e164": "+5493546415591",
+        "tipo": "celular",
+        "numero": "(03546) 15415591",
+        "whatsapp": "5493546415591"
+      }
+    ],
+    "web": "https://www.instagram.com/panchosantosanta/",
+    "createdAt": "2026-09-22T16:49:44.000Z",
+    "updatedAt": "2026-09-22T16:49:44.000Z"
+  },
+  {
+    "id": 98,
+    "nombre": "SUKHA",
+    "categoria": "comidas para llevar",
+    "direccion": "Benito Soria esq. Malvinas Argentinas",
+    "telefono": "(03546) 15520211",
+    "telefonos": [
+      {
+        "e164": "+5493546520211",
+        "tipo": "celular",
+        "numero": "(03546) 15520211",
+        "whatsapp": "5493546520211"
+      }
+    ],
+    "web": "https://www.instagram.com/sukha.rotiseria?igsh=MWswY2p1a3JrOGxtaA%3D%3D",
+    "createdAt": "2026-09-22T16:52:35.000Z",
+    "updatedAt": "2026-09-22T16:52:35.000Z"
+  },
+  {
+    "id": 99,
+    "nombre": "MARI (Rotisería)",
+    "categoria": "comidas para llevar",
+    "direccion": "Calle 5 entre10 y 8",
+    "telefono": "(03546) 15543877",
+    "telefonos": [
+      {
+        "e164": "+5493546543877",
+        "tipo": "celular",
+        "numero": "(03546) 15543877",
+        "whatsapp": "5493546543877"
+      }
+    ],
+    "web": "https://www.instagram.com/mari.rotiseriaa/",
+    "createdAt": "2026-09-22T16:53:13.000Z",
+    "updatedAt": "2026-09-22T16:53:13.000Z"
+  },
+  {
+    "id": 100,
+    "nombre": "ROCHA'S",
+    "categoria": "comidas para llevar",
+    "direccion": "Calle 3  755",
+    "telefono": "(03546) 15488351",
+    "telefonos": [
+      {
+        "e164": "+5493546488351",
+        "tipo": "celular",
+        "numero": "(03546) 15488351",
+        "whatsapp": "5493546488351"
+      }
+    ],
+    "web": "https://www.instagram.com/rochasrotiseria/?hl=es",
+    "createdAt": "2026-09-22T16:55:16.000Z",
+    "updatedAt": "2026-09-22T16:55:16.000Z"
+  },
+  {
+    "id": 101,
+    "nombre": "QUE LOMITOS",
+    "categoria": "comidas para llevar",
+    "direccion": "Mendoza 126",
+    "telefono": "(03546) 15561599",
+    "telefonos": [
+      {
+        "e164": "+5493546561599",
+        "tipo": "celular",
+        "numero": "(03546) 15561599",
+        "whatsapp": "5493546561599"
+      }
+    ],
+    "web": "https://que-lomitos-sr.pedix.app/",
+    "createdAt": "2026-09-22T16:58:00.000Z",
+    "updatedAt": "2026-09-22T16:58:00.000Z"
+  },
+  {
+    "id": 102,
+    "nombre": "MERCADO DE SABORES",
+    "categoria": "comidas para llevar",
+    "direccion": "A. Int. R. Giagetto 1400 (esq. Los Quebrachos)",
+    "telefono": "(03546) 15437337",
+    "telefonos": [
+      {
+        "e164": "+5493546437337",
+        "tipo": "celular",
+        "numero": "(03546) 15437337",
+        "whatsapp": "5493546437337"
+      }
+    ],
+    "web": "https://www.instagram.com/mercado_desabores/",
+    "createdAt": "2026-09-23T12:31:02.000Z",
+    "updatedAt": "2026-09-23T12:31:02.000Z"
+  },
+  {
+    "id": 103,
+    "nombre": "PARRILLA EL QUINCHO",
+    "categoria": "comidas para llevar",
+    "direccion": "Camino de los Horneros 963",
+    "telefono": "(03546) 15415374",
+    "telefonos": [
+      {
+        "e164": "+5493546415374",
+        "tipo": "celular",
+        "numero": "(03546) 15415374",
+        "whatsapp": "5493546415374"
+      }
+    ],
+    "web": "https://www.google.com/search?q=Parrilla+El+Quincho+Santa+Rosa+de+Calamuchita%2C+C%C3%B3rdoba&sca_esv=585baa279a4b2485&rlz=1C1CHBF_esAR932AR",
+    "createdAt": "2026-09-23T12:35:57.000Z",
+    "updatedAt": "2026-09-23T12:35:57.000Z"
+  },
+  {
+    "id": 104,
+    "nombre": "PIZZA MAX",
+    "categoria": "comidas para llevar",
+    "direccion": "Calle 5 entre 8 esq. Costanera",
+    "telefono": "(03546) 15435958",
+    "telefonos": [
+      {
+        "e164": "+5493546435958",
+        "tipo": "celular",
+        "numero": "(03546) 15435958",
+        "whatsapp": "5493546435958"
+      }
+    ],
+    "web": "https://www.instagram.com/lapizzamax/",
+    "createdAt": "2026-09-23T12:39:03.000Z",
+    "updatedAt": "2026-09-23T12:39:03.000Z"
+  },
+  {
+    "id": 105,
+    "nombre": "CHE VIGILANTE",
+    "categoria": "cafetería",
+    "direccion": "Calle 30 entre 5 y 7",
+    "telefono": "(03546) 15439157",
+    "telefonos": [
+      {
+        "e164": "+5493546439157",
+        "tipo": "celular",
+        "numero": "(03546) 15439157",
+        "whatsapp": "5493546439157"
+      }
+    ],
+    "web": "https://www.instagram.com/chevigilante_/",
+    "createdAt": "2026-09-23T13:54:50.000Z",
+    "updatedAt": "2026-09-23T13:54:50.000Z"
+  },
+  {
+    "id": 106,
+    "nombre": "HAMBURGUESERIA DE GARAGE",
+    "categoria": "pizzería",
+    "direccion": "Costa Rica esq. Mexico",
+    "telefono": "5493463450799",
+    "telefonos": [
+      {
+        "e164": "+5493463450799",
+        "tipo": "celular",
+        "numero": "5493463450799",
+        "whatsapp": "5493463450799"
+      }
+    ],
+    "web": "https://www.instagram.com/hamburgueseria_de_garaje/?hl=es",
+    "createdAt": "2026-09-23T23:22:20.000Z",
+    "updatedAt": "2026-09-23T23:22:20.000Z"
+  }
+]
