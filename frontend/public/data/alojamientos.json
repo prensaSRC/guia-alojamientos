@@ -992,24 +992,6 @@
     "updatedAt": "2026-09-14T14:04:00.000Z"
   },
   {
-    "id": 53,
-    "nombre": "LOS ALAMOS",
-    "categoria": "departamento",
-    "direccion": "Av. Río Suquía esq. San Miguel",
-    "telefono": "(03546) 15500438",
-    "telefonos": [
-      {
-        "e164": "+5493546500438",
-        "tipo": "celular",
-        "numero": "(03546) 15500438",
-        "whatsapp": "5493546500438"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 54,
     "nombre": "LOS BICHOS",
     "categoria": "departamento",
@@ -3753,24 +3735,6 @@
     "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
-    "id": 202,
-    "nombre": "URQU QHAWARINA",
-    "categoria": "apart cabaña",
-    "direccion": "Soberanía Nacional esq. Cno. Provincial",
-    "telefono": "(03546) 15437935",
-    "telefonos": [
-      {
-        "e164": "+5493546437935",
-        "tipo": "celular",
-        "numero": "(03546) 15437935",
-        "whatsapp": "5493546437935"
-      }
-    ],
-    "web": "https://www.msanta.com.ar/",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-10T16:15:21.000Z"
-  },
-  {
     "id": 203,
     "nombre": "VERDE Y BLANCO",
     "categoria": "apart cabaña",
@@ -4708,7 +4672,7 @@
   {
     "id": 251,
     "nombre": "POSADA PORTAL DEL RÍO",
-    "categoria": "casa de alquiler",
+    "categoria": "posada",
     "direccion": "Bernardo Houssey s/n El Viejo Camino Real y Don Goyo",
     "telefono": "(03546) 15514177",
     "telefonos": [
@@ -5268,29 +5232,6 @@
     "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
-    "id": 281,
-    "nombre": "BIEN DE AMORES",
-    "categoria": "casa de alquiler",
-    "direccion": "La Ribera 140",
-    "telefono": "(03546) 15502828 / (011) 44456664",
-    "telefonos": [
-      {
-        "e164": "+5493546502828",
-        "tipo": "celular",
-        "numero": "(03546) 15502828",
-        "whatsapp": "5493546502828"
-      },
-      {
-        "e164": "+541144456664",
-        "tipo": "fijo",
-        "numero": "(011) 44456664"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 282,
     "nombre": "CABAÑAS SANTA ROSA",
     "categoria": "casa de alquiler",
@@ -5399,24 +5340,6 @@
     "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
-    "id": 288,
-    "nombre": "ALBANOVA",
-    "categoria": "casa de alquiler",
-    "direccion": "Av. Ángel Llanos 230",
-    "telefono": "(0351) 156190278",
-    "telefonos": [
-      {
-        "e164": "+5493516190278",
-        "tipo": "celular",
-        "numero": "(0351) 156190278",
-        "whatsapp": "5493516190278"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 289,
     "nombre": "EL DESPERTAR",
     "categoria": "casa de alquiler",
@@ -5457,24 +5380,6 @@
     "web": "https://www.instagram.com/acaciasblancascba/",
     "createdAt": "2026-09-05T22:44:13.000Z",
     "updatedAt": "2026-09-07T13:57:46.000Z"
-  },
-  {
-    "id": 291,
-    "nombre": "EL SUEÑO",
-    "categoria": "casa de alquiler",
-    "direccion": "Los Cantaros 969",
-    "telefono": "(02477) 155677287",
-    "telefonos": [
-      {
-        "e164": "+54924775677287",
-        "tipo": "celular",
-        "numero": "(02477) 155677287",
-        "whatsapp": "54924775677287"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
     "id": 292,
@@ -7082,30 +6987,6 @@
     "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
-    "id": 381,
-    "nombre": "WINITRAN",
-    "categoria": "casa de alquiler",
-    "direccion": "Camino los 7 Colores entre Camino Provincial y Los Horneros",
-    "telefono": "(0353) 155649257 / 154240145",
-    "telefonos": [
-      {
-        "e164": "+5493535649257",
-        "tipo": "celular",
-        "numero": "(0353) 155649257",
-        "whatsapp": "5493535649257"
-      },
-      {
-        "e164": "+5493534240145",
-        "tipo": "celular",
-        "numero": "(0353) 154240145",
-        "whatsapp": "5493534240145"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 382,
     "nombre": "CABAÑAS BELLA VISTA",
     "categoria": "casa de alquiler",
@@ -8131,24 +8012,6 @@
     "updatedAt": "2026-09-09T12:17:20.000Z"
   },
   {
-    "id": 434,
-    "nombre": "CABAÑAS AG",
-    "categoria": "casa de alquiler",
-    "direccion": "El Nogal 255",
-    "telefono": "(03546) 15401705",
-    "telefonos": [
-      {
-        "e164": "+5493546401705",
-        "tipo": "celular",
-        "numero": "(03546) 15401705",
-        "whatsapp": "5493546401705"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 435,
     "nombre": "LOURDES",
     "categoria": "casa de alquiler",
@@ -8761,24 +8624,6 @@
     "web": "",
     "createdAt": "2026-09-05T22:44:13.000Z",
     "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
-    "id": 467,
-    "nombre": "HOSPEDAJE 9 DE JULIO",
-    "categoria": "casa de alquiler",
-    "direccion": "9 De Julio 314",
-    "telefono": "(03546) 15541434",
-    "telefonos": [
-      {
-        "e164": "+5493546541434",
-        "tipo": "celular",
-        "numero": "(03546) 15541434",
-        "whatsapp": "5493546541434"
-      }
-    ],
-    "web": "https://www.facebook.com/p/Hospedaje-9-de-Julio-100064525045902/",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-11T16:39:11.000Z"
   },
   {
     "id": 468,
@@ -9634,24 +9479,6 @@
     "updatedAt": "2026-09-11T14:53:53.000Z"
   },
   {
-    "id": 512,
-    "nombre": "EL TEHUELCHE",
-    "categoria": "casa de alquiler",
-    "direccion": "Av. Costanera esq Dr. Vitale",
-    "telefono": "(03546) 15659962",
-    "telefonos": [
-      {
-        "e164": "+5493546659962",
-        "tipo": "celular",
-        "numero": "(03546) 15659962",
-        "whatsapp": "5493546659962"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 513,
     "nombre": "ATAIAS",
     "categoria": "casa de alquiler",
@@ -9937,7 +9764,7 @@
   },
   {
     "id": 527,
-    "nombre": "CARDENALES",
+    "nombre": "LOS CARDENALES",
     "categoria": "casa de alquiler",
     "direccion": "Los Olmos esq El Caldén",
     "telefono": "(0358) 154112886 / 155166837",
@@ -10263,24 +10090,6 @@
     "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
-    "id": 545,
-    "nombre": "PIRQUITA",
-    "categoria": "casa de alquiler",
-    "direccion": "Corrientes 416",
-    "telefono": "(011) 1549362315",
-    "telefonos": [
-      {
-        "e164": "+5491149362315",
-        "tipo": "celular",
-        "numero": "(011) 1549362315",
-        "whatsapp": "5491149362315"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 546,
     "nombre": "MI VIEJO",
     "categoria": "casa de alquiler",
@@ -10345,24 +10154,6 @@
     "web": "https://www.facebook.com/p/Caba%C3%B1as-Kangar%C3%BA-100063519042470/",
     "createdAt": "2026-09-05T22:44:13.000Z",
     "updatedAt": "2026-09-11T12:41:47.000Z"
-  },
-  {
-    "id": 550,
-    "nombre": "DEPTOS. CALAMUCHITA",
-    "categoria": "casa de alquiler",
-    "direccion": "Belgrano 136",
-    "telefono": "(03546) 15408466",
-    "telefonos": [
-      {
-        "e164": "+5493546408466",
-        "tipo": "celular",
-        "numero": "(03546) 15408466",
-        "whatsapp": "5493546408466"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
   },
   {
     "id": 551,
@@ -10675,7 +10466,7 @@
   },
   {
     "id": 572,
-    "nombre": "VILLA SOLEADA",
+    "nombre": "VILLA SOLEDA",
     "categoria": "casa de alquiler",
     "direccion": "Av. Carcano esq Mariano Moreno",
     "telefono": "(03472) 15611548",
@@ -10690,42 +10481,6 @@
     "web": null,
     "createdAt": "2026-09-11T10:37:40.000Z",
     "updatedAt": "2026-09-11T10:37:40.000Z"
-  },
-  {
-    "id": 573,
-    "nombre": "CHEROGA",
-    "categoria": "casa de alquiler",
-    "direccion": "Los Sauces 98",
-    "telefono": "(0341) 156130515",
-    "telefonos": [
-      {
-        "e164": "+5493416130515",
-        "tipo": "celular",
-        "numero": "(0341) 156130515",
-        "whatsapp": "5493416130515"
-      }
-    ],
-    "web": null,
-    "createdAt": "2026-09-11T12:32:27.000Z",
-    "updatedAt": "2026-09-11T12:32:27.000Z"
-  },
-  {
-    "id": 574,
-    "nombre": "EL LADO DEL CAMINO",
-    "categoria": "casa de alquiler",
-    "direccion": "Pasaje Independencia 45",
-    "telefono": "(03546) 15407743",
-    "telefonos": [
-      {
-        "e164": "+5493546407743",
-        "tipo": "celular",
-        "numero": "(03546) 15407743",
-        "whatsapp": "5493546407743"
-      }
-    ],
-    "web": null,
-    "createdAt": "2026-09-11T13:03:38.000Z",
-    "updatedAt": "2026-09-11T13:03:38.000Z"
   },
   {
     "id": 575,
@@ -10746,26 +10501,8 @@
     "updatedAt": "2026-09-11T13:12:40.000Z"
   },
   {
-    "id": 576,
-    "nombre": "TU ALPINA",
-    "categoria": "casa de alquiler",
-    "direccion": "Los Molles 277",
-    "telefono": "(011) 1532136529",
-    "telefonos": [
-      {
-        "e164": "+5491132136529",
-        "tipo": "celular",
-        "numero": "(011) 1532136529",
-        "whatsapp": "5491132136529"
-      }
-    ],
-    "web": "https://www.tualpina.com.ar/",
-    "createdAt": "2026-09-11T14:31:56.000Z",
-    "updatedAt": "2026-09-11T14:31:56.000Z"
-  },
-  {
     "id": 577,
-    "nombre": "DOMINGO DESING. HOTEL",
+    "nombre": "DOMINGO DESING HOTEL",
     "categoria": "hotel",
     "direccion": "Ruta Provincial 5 Km 93,5",
     "telefono": "(03546) 15543983",
@@ -10780,5 +10517,335 @@
     "web": "https://complejovalledelsol.com/",
     "createdAt": "2026-09-16T14:27:48.000Z",
     "updatedAt": "2026-09-16T14:27:48.000Z"
+  },   {
+    "id": 578,
+    "nombre": "GALVAN ADRIANA ESTER",
+    "categoria": "vivienda",
+    "direccion": "El Nogal 255",
+    "telefono": "(03546) 15401705",
+    "telefonos": [
+      {
+        "e164": "+5493546401705",
+        "tipo": "celular",
+        "numero": "(03546) 15401705",
+        "whatsapp": "5493546401705"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 579,
+    "nombre": "LA DULCE",
+    "categoria": "vivienda",
+    "direccion": "Los Jilgueros 127",
+    "telefono": "(03546) 15409510 / (03546) 15407647",
+    "telefonos": [
+      {
+        "e164": "+5493546409510",
+        "tipo": "celular",
+        "numero": "(03546) 15409510",
+        "whatsapp": "5493546409510"
+      },
+      {
+        "e164": "+5493546407647",
+        "tipo": "celular",
+        "numero": "(03546) 15407647"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 580,
+    "nombre": "LA GRINGA",
+    "categoria": "vivienda",
+    "direccion": "Los Tilos 68",
+    "telefono": "(0358) 154280820",
+    "telefonos": [
+      {
+        "e164": "+5493584280820",
+        "tipo": "celular",
+        "numero": "(0358) 154280820",
+        "whatsapp": "5493584280820"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 581,
+    "nombre": "LABORDEBOY",
+    "categoria": "vivienda",
+    "direccion": "Ruta 5 km 91.2",
+    "telefono": "(03489) 15996771",
+    "telefonos": [
+      {
+        "e164": "+5493489996771",
+        "tipo": "celular",
+        "numero": "(03489) 15996771",
+        "whatsapp": "5493489996771"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 582,
+    "nombre": "LOS NIETOS",
+    "categoria": "vivienda",
+    "direccion": "SOBERANÍA NACIONAL N° 334",
+    "telefono": "(3546) 15477563 / (3546) 421003",
+    "telefonos": [
+      {
+        "e164": "+5493546477563",
+        "tipo": "celular",
+        "numero": "(3546) 15477563",
+        "whatsapp": "5493546477563"
+      },
+      {
+        "e164": "+543546421003",
+        "tipo": "fijo",
+        "numero": "(3546) 421003"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 583,
+    "nombre": "MILAYE",
+    "categoria": "vivienda",
+    "direccion": "Horacio Quiroga esq. N. Mandella",
+    "telefono": "(011) 1551406520",
+    "telefonos": [
+      {
+        "e164": "+549111551406520",
+        "tipo": "celular",
+        "numero": "(011) 1551406520",
+        "whatsapp": "549111551406520"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 584,
+    "nombre": "MIS ABUELOS",
+    "categoria": "vivienda",
+    "direccion": "Ruta 228 km 5,5",
+    "telefono": "(0221) 154778288",
+    "telefonos": [
+      {
+        "e164": "+54922154778288",
+        "tipo": "celular",
+        "numero": "(0221) 154778288",
+        "whatsapp": "54922154778288"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 585,
+    "nombre": "PLAYA HOSTEL",
+    "categoria": "vivienda",
+    "direccion": "Pasaje Privado 86",
+    "telefono": "(03546) 15401762",
+    "telefonos": [
+      {
+        "e164": "+5493546401762",
+        "tipo": "celular",
+        "numero": "(03546) 15401762",
+        "whatsapp": "5493546401762"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 586,
+    "nombre": "LAS MELLIZAS Y LAS GEMELAS",
+    "categoria": "vivienda",
+    "direccion": "Calle 14 184 e/ 3y1",
+    "telefono": "(03546) 15416213",
+    "telefonos": [
+      {
+        "e164": "+5493546416213",
+        "tipo": "celular",
+        "numero": "(03546) 15416213",
+        "whatsapp": "5493546416213"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 587,
+    "nombre": "TERRACOTA",
+    "categoria": "vivienda",
+    "direccion": "Los Cedros 2011",
+    "telefono": "(0358) 154257697",
+    "telefonos": [
+      {
+        "e164": "+5493584257697",
+        "tipo": "celular",
+        "numero": "(0358) 154257697",
+        "whatsapp": "5493584257697"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 588,
+    "nombre": "MOTOPOSADA CALAMUCHITA",
+    "categoria": "vivienda",
+    "direccion": "Los Robles 648",
+    "telefono": "(03546) 15450637",
+    "telefonos": [
+      {
+        "e164": "+5493546450637",
+        "tipo": "celular",
+        "numero": "(03546) 15450637",
+        "whatsapp": "5493546450637"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+    {
+    "id": 589,
+    "nombre": "VIENA",
+    "categoria": "apart cabaña",
+    "direccion": "España 411",
+    "telefono": "(03546) 420409 / (03546) 15650171",
+    "telefonos": [
+      {
+        "e164": "+543546420409",
+        "tipo": "fijo",
+        "numero": "(03546) 420409"
+      },
+      {
+        "e164": "+549354650171",
+        "tipo": "celular",
+        "numero": "(03546) 15650171",
+        "whatsapp": "549354650171"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 590,
+    "nombre": "SARA HOUSE",
+    "categoria": "apart cabaña",
+    "direccion": "Horacio Quiroga esq. Pappo Napolitano",
+    "telefono": "(03546) 15430815",
+    "telefonos": [
+      {
+        "e164": "+5493546430815",
+        "tipo": "celular",
+        "numero": "(03546) 15430815",
+        "whatsapp": "5493546430815"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 591,
+    "nombre": "PUENTES AMARILLOS",
+    "categoria": "apart cabaña",
+    "direccion": "Cno. Provincial 1060",
+    "telefono": "(03571) 15603434",
+    "telefonos": [
+      {
+        "e164": "+54935715603434",
+        "tipo": "celular",
+        "numero": "(03571) 15603434",
+        "whatsapp": "54935715603434"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 592,
+    "nombre": "ARCO IRIS",
+    "categoria": "apart cabaña",
+    "direccion": "Cno. Los Horneros 790 e/ El Picaflor y el Mirlo",
+    "telefono": "(03533) 15477766 / (03533) 15431164",
+    "telefonos": [
+      {
+        "e164": "+5493533477766",
+        "tipo": "celular",
+        "numero": "(03533) 15477766",
+        "whatsapp": "5493533477766"
+      },
+      {
+        "e164": "+5493533431164",
+        "tipo": "celular",
+        "numero": "(03533) 15431164"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 593,
+    "nombre": "AROMAS DE LA ACEQUIA",
+    "categoria": "apart cabaña",
+    "direccion": "Cacique Guasana vira 330",
+    "telefono": "(0358) 154121721 / (0358) 154197994",
+    "telefonos": [
+      {
+        "e164": "+5493584121721",
+        "tipo": "celular",
+        "numero": "(0358) 154121721",
+        "whatsapp": "5493584121721"
+      },
+      {
+        "e164": "+5493584197994",
+        "tipo": "celular",
+        "numero": "(0358) 154197994"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": 594,
+    "nombre": "LAS FLORES",
+    "categoria": "apart cabaña",
+    "direccion": "Dorrego 75",
+    "telefono": "(0358) 154182390",
+    "telefonos": [
+      {
+        "e164": "+5493584182390",
+        "tipo": "celular",
+        "numero": "(0358) 154182390",
+        "whatsapp": "5493584182390"
+      }
+    ],
+    "web": "",
+    "createdAt": "2026-10-25T12:00:00.000Z",
+    "updatedAt": "2026-10-25T12:00:00.000Z"
   }
 ]
