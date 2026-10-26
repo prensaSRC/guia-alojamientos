@@ -2595,24 +2595,6 @@
     "updatedAt": "2026-09-09T12:32:06.000Z"
   },
   {
-    "id": 141,
-    "nombre": "HUSY SAMY",
-    "categoria": "apart cabaña",
-    "direccion": "Champaqui Sur 97",
-    "telefono": "(03546) 15526521",
-    "telefonos": [
-      {
-        "e164": "+5493546526521",
-        "tipo": "celular",
-        "numero": "(03546) 15526521",
-        "whatsapp": "5493546526521"
-      }
-    ],
-    "web": "",
-    "createdAt": "2026-09-05T22:44:13.000Z",
-    "updatedAt": "2026-09-05T22:44:13.000Z"
-  },
-  {
     "id": 142,
     "nombre": "LA AÑORANZA",
     "categoria": "apart cabaña",
@@ -6197,7 +6179,7 @@
   },
   {
     "id": 337,
-    "nombre": "LA LOMITA 2",
+    "nombre": "LA LOMITA II",
     "categoria": "casa de alquiler",
     "direccion": "Domingo Nievas",
     "telefono": "(03546) 15456460",
@@ -6209,7 +6191,7 @@
         "whatsapp": "5493546456460"
       }
     ],
-    "web": "https://www.instagram.com/complejolalomita_/",
+    "web": "https://www.facebook.com/share/1MNncHG4WJ/",
     "createdAt": "2026-09-05T22:44:13.000Z",
     "updatedAt": "2026-09-10T13:20:27.000Z"
   },
@@ -10520,7 +10502,7 @@
   },   {
     "id": 578,
     "nombre": "GALVAN ADRIANA ESTER",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "El Nogal 255",
     "telefono": "(03546) 15401705",
     "telefonos": [
@@ -10538,7 +10520,7 @@
   {
     "id": 579,
     "nombre": "LA DULCE",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Los Jilgueros 127",
     "telefono": "(03546) 15409510 / (03546) 15407647",
     "telefonos": [
@@ -10561,7 +10543,7 @@
   {
     "id": 580,
     "nombre": "LA GRINGA",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Los Tilos 68",
     "telefono": "(0358) 154280820",
     "telefonos": [
@@ -10579,7 +10561,7 @@
   {
     "id": 581,
     "nombre": "LABORDEBOY",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Ruta 5 km 91.2",
     "telefono": "(03489) 15996771",
     "telefonos": [
@@ -10597,7 +10579,7 @@
   {
     "id": 582,
     "nombre": "LOS NIETOS",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "SOBERANÍA NACIONAL N° 334",
     "telefono": "(3546) 15477563 / (3546) 421003",
     "telefonos": [
@@ -10620,7 +10602,7 @@
   {
     "id": 583,
     "nombre": "MILAYE",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Horacio Quiroga esq. N. Mandella",
     "telefono": "(011) 1551406520",
     "telefonos": [
@@ -10638,7 +10620,7 @@
   {
     "id": 584,
     "nombre": "MIS ABUELOS",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Ruta 228 km 5,5",
     "telefono": "(0221) 154778288",
     "telefonos": [
@@ -10656,7 +10638,7 @@
   {
     "id": 585,
     "nombre": "PLAYA HOSTEL",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Pasaje Privado 86",
     "telefono": "(03546) 15401762",
     "telefonos": [
@@ -10674,7 +10656,7 @@
   {
     "id": 586,
     "nombre": "LAS MELLIZAS Y LAS GEMELAS",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Calle 14 184 e/ 3y1",
     "telefono": "(03546) 15416213",
     "telefonos": [
@@ -10692,7 +10674,7 @@
   {
     "id": 587,
     "nombre": "TERRACOTA",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Los Cedros 2011",
     "telefono": "(0358) 154257697",
     "telefonos": [
@@ -10710,7 +10692,7 @@
   {
     "id": 588,
     "nombre": "MOTOPOSADA CALAMUCHITA",
-    "categoria": "vivienda",
+    "categoria": "casa",
     "direccion": "Los Robles 648",
     "telefono": "(03546) 15450637",
     "telefonos": [
