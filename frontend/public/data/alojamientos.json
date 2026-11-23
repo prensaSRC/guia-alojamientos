@@ -1467,13 +1467,13 @@
     "nombre": "SOLARES DE LA COLINA",
     "categoria": "departamento",
     "direccion": "Fuerza Aérea 142",
-    "telefono": "(03385) 15684513",
+    "telefono": "(03385) 15680109",
     "telefonos": [
       {
-        "e164": "+5493385684513",
+        "e164": "+5493385680109",
         "tipo": "celular",
-        "numero": "(03385) 15684513",
-        "whatsapp": "5493385684513"
+        "numero": "(03385) 15680109",
+        "whatsapp": "5493385680109"
       }
     ],
     "web": "https://solaresdelacolina.com.ar/",
@@ -10563,13 +10563,13 @@
     "nombre": "LABORDEBOY",
     "categoria": "casa",
     "direccion": "Ruta 5 km 91.2",
-    "telefono": "(03489) 15996771",
+    "telefono": "(03489) 15663771",
     "telefonos": [
       {
-        "e164": "+5493489996771",
+        "e164": "+5493489663771",
         "tipo": "celular",
-        "numero": "(03489) 15996771",
-        "whatsapp": "5493489996771"
+        "numero": "(03489) 15663771",
+        "whatsapp": "5493489663771"
       }
     ],
     "web": "",
@@ -10673,16 +10673,16 @@
   },
   {
     "id": 587,
-    "nombre": "TERRACOTA",
+    "nombre": "TERRACOTTA",
     "categoria": "casa",
     "direccion": "Los Cedros 2011",
-    "telefono": "(0358) 154257697",
+    "telefono": "(0358) 154362039",
     "telefonos": [
       {
-        "e164": "+5493584257697",
+        "e164": "+5493584362039",
         "tipo": "celular",
-        "numero": "(0358) 154257697",
-        "whatsapp": "5493584257697"
+        "numero": "(0358) 154362039",
+        "whatsapp": "5493584362039"
       }
     ],
     "web": "",
